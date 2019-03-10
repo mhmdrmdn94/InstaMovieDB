@@ -33,6 +33,10 @@
 		464A836F2235C68500A5C704 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A836E2235C68500A5C704 /* MovieViewModel.swift */; };
 		464A83722235CB6800A5C704 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A83702235CB6800A5C704 /* MovieTableViewCell.swift */; };
 		464A83732235CB6800A5C704 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A83712235CB6800A5C704 /* MovieTableViewCell.xib */; };
+		464A83752235D1BE00A5C704 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A83742235D1BE00A5C704 /* CustomLoadingView.swift */; };
+		464A83772235D1D600A5C704 /* CustomLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A83762235D1D600A5C704 /* CustomLoadingView.xib */; };
+		464A83792235D6B100A5C704 /* UIView+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A83782235D6B100A5C704 /* UIView+nib.swift */; };
+		464A837B2235D6DF00A5C704 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A837A2235D6DF00A5C704 /* UIView+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		464A836E2235C68500A5C704 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		464A83702235CB6800A5C704 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		464A83712235CB6800A5C704 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		464A83742235D1BE00A5C704 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
+		464A83762235D1D600A5C704 /* CustomLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomLoadingView.xib; sourceTree = "<group>"; };
+		464A83782235D6B100A5C704 /* UIView+nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+nib.swift"; sourceTree = "<group>"; };
+		464A837A2235D6DF00A5C704 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +210,8 @@
 			children = (
 				464A83412235B2B300A5C704 /* UIColor+init.swift */,
 				464A83432235B2D000A5C704 /* UIView+rounded.swift */,
+				464A83782235D6B100A5C704 /* UIView+nib.swift */,
+				464A837A2235D6DF00A5C704 /* UIView+Constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -245,6 +255,8 @@
 		464A83512235B4AA00A5C704 /* TableViewLoadingState */ = {
 			isa = PBXGroup;
 			children = (
+				464A83742235D1BE00A5C704 /* CustomLoadingView.swift */,
+				464A83762235D1D600A5C704 /* CustomLoadingView.xib */,
 			);
 			path = TableViewLoadingState;
 			sourceTree = "<group>";
@@ -365,6 +377,7 @@
 				464A83732235CB6800A5C704 /* MovieTableViewCell.xib in Resources */,
 				464A832622354CC100A5C704 /* Assets.xcassets in Resources */,
 				464A833422354D2400A5C704 /* HomeViewController.xib in Resources */,
+				464A83772235D1D600A5C704 /* CustomLoadingView.xib in Resources */,
 				464A83682235BFCA00A5C704 /* MoviesListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,11 +403,14 @@
 				464A835D2235BC3500A5C704 /* MoviesListProtocols.swift in Sources */,
 				464A836F2235C68500A5C704 /* MovieViewModel.swift in Sources */,
 				464A83442235B2D000A5C704 /* UIView+rounded.swift in Sources */,
+				464A83752235D1BE00A5C704 /* CustomLoadingView.swift in Sources */,
+				464A837B2235D6DF00A5C704 /* UIView+Constraints.swift in Sources */,
 				464A831F22354CC000A5C704 /* AppDelegate.swift in Sources */,
 				464A83572235B57B00A5C704 /* APIConstants.swift in Sources */,
 				464A83642235BFBA00A5C704 /* MoviesListPresenter.swift in Sources */,
 				464A83602235BFA600A5C704 /* MoviesListBuilder.swift in Sources */,
 				464A833322354D2400A5C704 /* HomeViewController.swift in Sources */,
+				464A83792235D6B100A5C704 /* UIView+nib.swift in Sources */,
 				464A834E2235B3B800A5C704 /* InstaMovieColor.swift in Sources */,
 				464A83482235B30F00A5C704 /* BaseViewController.swift in Sources */,
 			);

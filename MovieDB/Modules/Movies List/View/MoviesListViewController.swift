@@ -18,6 +18,7 @@ class MoviesListViewController: BaseViewController {
         super.viewDidLoad()
         setupView()
         setupTableView()
+        presenter?.loadMovies()
     }
     
     private func setupView() {
@@ -57,7 +58,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //TODO: get this from interactor according to your data source
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,7 +87,6 @@ extension MoviesListViewController: MoviesListViewProtocol {
         //TODO: hide footer loader
     }
     
-    
     func showEmptyState() {
         //TODO: show empty state for no movies
     }
@@ -96,7 +96,8 @@ extension MoviesListViewController: MoviesListViewProtocol {
     }
     
     func showLoaderState() {
-        //TODO: show loading state
+        let loadingView = CustomLoadingView()
+        tableView.backgroundView = loadingView
     }
     
     func hideLoaderState() {
