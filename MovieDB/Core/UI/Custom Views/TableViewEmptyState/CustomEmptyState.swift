@@ -1,5 +1,5 @@
 //
-//  CustomLoadingView.swift
+//  CustomEmptyState.swift
 //  MovieDB
 //
 //  Created by Mo-Ramadan Abdelhafez on 3/11/19.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class CustomLoadingView: UIView {
+class CustomEmptyState: UIView {
 
     @IBOutlet fileprivate var contentView: UIView!
+    @IBOutlet fileprivate weak var avatarImageView: UIImageView!
+    @IBOutlet fileprivate weak var titleLabel: UILabel!
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +25,7 @@ class CustomLoadingView: UIView {
     }
     
     private func initView() {
-        contentView = loadFromNib(named: CustomLoadingView.nibName)!
+        contentView = loadFromNib(named: CustomEmptyState.nibName)!
         addSubview(contentView)
         pinItemToEdges(item: contentView)
     }

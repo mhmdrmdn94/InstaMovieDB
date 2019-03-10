@@ -88,11 +88,12 @@ extension MoviesListViewController: MoviesListViewProtocol {
     }
     
     func showEmptyState() {
-        //TODO: show empty state for no movies
+        let emptyView = CustomEmptyState()
+        tableView.backgroundView = emptyView
     }
     
     func hideEmptyState() {
-        //TODO: hide empty state for no movies
+        tableView.backgroundView = nil
     }
     
     func showLoaderState() {
@@ -101,7 +102,7 @@ extension MoviesListViewController: MoviesListViewProtocol {
     }
     
     func hideLoaderState() {
-        //TODO: hide loading state
+         tableView.backgroundView = nil
     }
     
     func showErrorMessage(_ message: String) {

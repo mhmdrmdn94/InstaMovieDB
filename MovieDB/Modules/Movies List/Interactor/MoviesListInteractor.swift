@@ -25,9 +25,13 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
         //TODO: call movies service with nextPageNumber
     }
     
-    func getNumberOfRows() -> Int {
-        let numberOfRows = movies.count
-        return numberOfRows
+    func getNumberOfSections() -> Int {
+        //TODO: check for MyMovies and AllMovies
+        return 1
+    }
+    func getNumberOfRows(atSection section: Int) -> Int {
+        //TODO: check for MyMovies and AllMovies
+        return movies.count
     }
     
     func getMovieViewModelAt(_ indexPath: IndexPath) -> MovieViewModel? {

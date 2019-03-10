@@ -31,8 +31,11 @@ class MoviesListPresenter: MoviesListPresenterProtocol {
         interactor.loadMoreMovies()
     }
     
-    func getNumberOfRows() -> Int {
-        return interactor.getNumberOfRows()
+    func getNumberOfSections() -> Int {
+        return interactor.getNumberOfSections()
+    }
+    func getNumberOfRows(atSection section: Int) -> Int {
+        return interactor.getNumberOfRows(atSection: section)
     }
     
     func getMovieViewModelAt(_ indexPath: IndexPath) -> MovieViewModel? {
@@ -50,6 +53,7 @@ class MoviesListPresenter: MoviesListPresenterProtocol {
 
 extension MoviesListPresenter: MoviesListInteractorOutputProtocol {
     func didLoadMoviesSuccessfully() {
+        //TODO: check if datasource is empty, then show empty state
         view.hideLoaderState()
         view.reloadData()
     }

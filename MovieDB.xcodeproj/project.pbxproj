@@ -37,6 +37,8 @@
 		464A83772235D1D600A5C704 /* CustomLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A83762235D1D600A5C704 /* CustomLoadingView.xib */; };
 		464A83792235D6B100A5C704 /* UIView+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A83782235D6B100A5C704 /* UIView+nib.swift */; };
 		464A837B2235D6DF00A5C704 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A837A2235D6DF00A5C704 /* UIView+Constraints.swift */; };
+		464A83802235D80100A5C704 /* CustomEmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A837F2235D80100A5C704 /* CustomEmptyState.xib */; };
+		464A83822235D8B700A5C704 /* CustomEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A83812235D8B700A5C704 /* CustomEmptyState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		464A83762235D1D600A5C704 /* CustomLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomLoadingView.xib; sourceTree = "<group>"; };
 		464A83782235D6B100A5C704 /* UIView+nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+nib.swift"; sourceTree = "<group>"; };
 		464A837A2235D6DF00A5C704 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		464A837F2235D80100A5C704 /* CustomEmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomEmptyState.xib; sourceTree = "<group>"; };
+		464A83812235D8B700A5C704 /* CustomEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEmptyState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +241,7 @@
 		464A834B2235B36C00A5C704 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				464A837C2235D7D700A5C704 /* TableViewEmptyState */,
 				464A83522235B4BB00A5C704 /* TableViewLoadingFooter */,
 				464A83512235B4AA00A5C704 /* TableViewLoadingState */,
 			);
@@ -315,6 +320,15 @@
 			path = Wireframe;
 			sourceTree = "<group>";
 		};
+		464A837C2235D7D700A5C704 /* TableViewEmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				464A837F2235D80100A5C704 /* CustomEmptyState.xib */,
+				464A83812235D8B700A5C704 /* CustomEmptyState.swift */,
+			);
+			path = TableViewEmptyState;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -373,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464A83802235D80100A5C704 /* CustomEmptyState.xib in Resources */,
 				464A832922354CC100A5C704 /* LaunchScreen.storyboard in Resources */,
 				464A83732235CB6800A5C704 /* MovieTableViewCell.xib in Resources */,
 				464A832622354CC100A5C704 /* Assets.xcassets in Resources */,
@@ -397,6 +412,7 @@
 				464A835B2235B97200A5C704 /* URLRequestConverible.swift in Sources */,
 				464A834A2235B35800A5C704 /* BaseNavigationController.swift in Sources */,
 				464A83622235BFB100A5C704 /* MoviesListInteractor.swift in Sources */,
+				464A83822235D8B700A5C704 /* CustomEmptyState.swift in Sources */,
 				464A83592235B81B00A5C704 /* HTTPMethod.swift.swift in Sources */,
 				464A83422235B2B300A5C704 /* UIColor+init.swift in Sources */,
 				464A83672235BFCA00A5C704 /* MoviesListViewController.swift in Sources */,
