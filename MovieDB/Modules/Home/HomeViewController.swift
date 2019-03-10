@@ -13,4 +13,9 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func goToMoviesButtonTapped(_ sender: Any) {
+        let viewController = MoviesListBuilder().buildMoviesListModule()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }

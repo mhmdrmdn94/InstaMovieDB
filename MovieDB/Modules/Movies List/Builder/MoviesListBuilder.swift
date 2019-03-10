@@ -10,7 +10,14 @@ import UIKit
 
 class MoviesListBuilder: MoviesListBuilderProtocol {
     func buildMoviesListModule() -> UIViewController {
-        let viewController = UIViewController()
+        let viewController = MoviesListViewController()
+        let interactor = MoviesListInteractor()
+        let wireframe = MoviesListWireframe()
+        let presenter = MoviesListPresenter(view: viewController,
+                                            interactor: interactor,
+                                            wireframe: wireframe)
+        viewController.presenter = presenter
+        interactor.presenter = presenter
         return viewController
     }
 }
