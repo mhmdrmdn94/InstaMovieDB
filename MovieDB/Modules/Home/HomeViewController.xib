@@ -20,17 +20,23 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qse-cO-LAV">
-                    <rect key="frame" x="162" y="322.5" width="51.5" height="22"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epn-jH-YOD">
+                    <rect key="frame" x="102.5" y="311" width="170" height="45"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="2aC-ee-QVE"/>
+                        <constraint firstAttribute="height" constant="45" id="zqx-jF-YM9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <state key="normal" title="Go to movies list">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Qse-cO-LAV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ivh-bh-uoi"/>
-                <constraint firstItem="Qse-cO-LAV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sMS-tv-fKU"/>
+                <constraint firstItem="epn-jH-YOD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9AJ-rt-VV7"/>
+                <constraint firstItem="epn-jH-YOD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dqw-te-ANu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
