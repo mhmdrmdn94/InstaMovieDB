@@ -31,6 +31,8 @@
 		464A836B2235C03800A5C704 /* MoviesListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A836A2235C03800A5C704 /* MoviesListWireframe.swift */; };
 		464A836D2235C3D000A5C704 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A836C2235C3D000A5C704 /* Movie.swift */; };
 		464A836F2235C68500A5C704 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A836E2235C68500A5C704 /* MovieViewModel.swift */; };
+		464A83722235CB6800A5C704 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A83702235CB6800A5C704 /* MovieTableViewCell.swift */; };
+		464A83732235CB6800A5C704 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A83712235CB6800A5C704 /* MovieTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		464A836A2235C03800A5C704 /* MoviesListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListWireframe.swift; sourceTree = "<group>"; };
 		464A836C2235C3D000A5C704 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		464A836E2235C68500A5C704 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		464A83702235CB6800A5C704 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		464A83712235CB6800A5C704 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				464A836E2235C68500A5C704 /* MovieViewModel.swift */,
+				464A83702235CB6800A5C704 /* MovieTableViewCell.swift */,
+				464A83712235CB6800A5C704 /* MovieTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				464A832922354CC100A5C704 /* LaunchScreen.storyboard in Resources */,
+				464A83732235CB6800A5C704 /* MovieTableViewCell.xib in Resources */,
 				464A832622354CC100A5C704 /* Assets.xcassets in Resources */,
 				464A833422354D2400A5C704 /* HomeViewController.xib in Resources */,
 				464A83682235BFCA00A5C704 /* MoviesListViewController.xib in Resources */,
@@ -371,6 +378,7 @@
 			files = (
 				464A836D2235C3D000A5C704 /* Movie.swift in Sources */,
 				464A83502235B46800A5C704 /* Alert.swift in Sources */,
+				464A83722235CB6800A5C704 /* MovieTableViewCell.swift in Sources */,
 				464A836B2235C03800A5C704 /* MoviesListWireframe.swift in Sources */,
 				464A833F2235B28A00A5C704 /* BaseModel.swift in Sources */,
 				464A835B2235B97200A5C704 /* URLRequestConverible.swift in Sources */,
