@@ -34,12 +34,16 @@ class MovieCreationViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         setupDatePicker()
     }
 
     func setupView() {
-        
+        navigationItem.title = "Create Movie"
+        overviewTextView.roundCorners(withRadius: 5, borderWidth: 0.5, borderColor: .lightGray)
+        createButton.roundCorners(withRadius: createButton.frame.height/2)
     }
+    
     @IBAction func pickPosterButtonTapped(_ sender: UIButton) {
         self.showImageDataSourceAlert()
     }

@@ -23,7 +23,8 @@ class MoviesListViewController: BaseViewController {
     }
     
     private func setupView() {
-        //TODO: setup colors and navbar title ;;; make it largeTitle
+        navigationItem.title = "MoviesDB"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
