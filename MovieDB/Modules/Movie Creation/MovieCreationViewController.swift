@@ -51,6 +51,7 @@ class MovieCreationViewController: BaseViewController {
     @IBAction func createButtonTapped(_ sender: Any) {
         let newMovie = self.createMovie()
         delegate?.didCreateNewMovie(newMovie)
+        navigationController?.popViewController(animated: true)
     }
     
     func createMovie() -> Movie {

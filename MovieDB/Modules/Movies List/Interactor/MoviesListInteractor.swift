@@ -8,33 +8,58 @@
 
 import Foundation
 
+enum MoviesSectionType: Int {
+    case myMovies = 0, allMovies
+    
+    var sectionTitle: String {
+        switch self {
+        case .myMovies:
+            return "My Movies"
+        case .allMovies:
+            return "All Movies"
+        }
+    }
+}
+
 class MoviesListInteractor: MoviesListInteractorProtocol {
-   
+    
     weak var presenter: MoviesListInteractorOutputProtocol?
     
-    fileprivate var movies = [Movie]()
+    fileprivate var mixedMovies: [[Movie]]
     fileprivate var hasNextPage = true
     fileprivate var nextPageNumber = 1
     
+    init() {
+        let myMovies = [Movie]()
+        let allMovies = [Movie]()
+        self.mixedMovies = [myMovies, allMovies]
+    }
     
     func loadMovies() {
-        //TODO: call the movies service to load movies
+        self.presenter?.didLoadMoviesSuccessfully()
     }
     
     func loadMoreMovies() {
-        //TODO: call movies service with nextPageNumber
+        self.presenter?.didLoadMoreMoviesSuccessfully()
     }
     
     func getNumberOfSections() -> Int {
-        //TODO: check for MyMovies and AllMovies
-        return 1
+        return 2    //always has two sections
     }
+    
     func getNumberOfRows(atSection section: Int) -> Int {
-        //TODO: check for MyMovies and AllMovies
+        guard let sectionType = MoviesSectionType(rawValue: section) else { return 0 }
+        let movies = mixedMovies[sectionType.rawValue]
         return movies.count
     }
     
     func getMovieViewModelAt(_ indexPath: IndexPath) -> MovieViewModel? {
+        guard let sectionType = MoviesSectionType(rawValue: indexPath.section),
+            mixedMovies.count > sectionType.rawValue else {
+                return nil
+        }
+        
+        let movies = mixedMovies[sectionType.rawValue]
         if indexPath.row < movies.count {
             let model = movies[indexPath.row]
             let viewModel = self.getMovieViewModel(fromMovie: model)
@@ -44,6 +69,12 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
     }
     
     func getMovieModelAt(_ indexPath: IndexPath) -> Movie? {
+        guard let sectionType = MoviesSectionType(rawValue: indexPath.section),
+            mixedMovies.count > sectionType.rawValue else {
+                return nil
+        }
+        
+        let movies = mixedMovies[sectionType.rawValue]
         if indexPath.row < movies.count {
             let movie = movies[indexPath.row]
             return movie
@@ -54,6 +85,17 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
     func getHasMorePages() -> Bool {
         return hasNextPage
     }
+    
+    func addNewCreatedMovie(_ movie: Movie) {
+        var mutableMixedMovies = mixedMovies
+        var mutableMovies = mutableMixedMovies[MoviesSectionType.myMovies.rawValue]
+        mutableMovies.append(movie)
+        mutableMixedMovies.remove(at: MoviesSectionType.myMovies.rawValue)
+        mutableMixedMovies.insert(mutableMovies, at: MoviesSectionType.myMovies.rawValue)
+        self.mixedMovies = mutableMixedMovies
+        self.presenter?.didCreateNewMovie()
+    }
+    
 }
 
 fileprivate extension MoviesListInteractor {

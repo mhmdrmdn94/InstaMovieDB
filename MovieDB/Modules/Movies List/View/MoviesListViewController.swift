@@ -65,13 +65,11 @@ extension MoviesListViewController {
 
 extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        //TODO: later an enum to represent allMovies and myMovies sections
-        return 1
+        return presenter?.getNumberOfSections() ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //TODO: get this from interactor according to your data source
-        return 0
+        return presenter?.getNumberOfRows(atSection: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,16 +78,22 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let sectionType = MoviesSectionType(rawValue: section) else { return nil }
+        return sectionType.sectionTitle
+    }
+    
 }
 
 extension MoviesListViewController: MoviesListViewProtocol {
    
     func reloadData() {
-        //TODO: reload table-view
+        tableView.reloadData()
     }
     
     func reloadCellAt(indexPath: IndexPath) {
-        //TODO: reload cell at
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     func showFooterLoaderView() {

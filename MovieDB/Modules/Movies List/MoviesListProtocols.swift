@@ -39,6 +39,7 @@ protocol MoviesListInteractorProtocol: class {
     func getMovieViewModelAt(_ indexPath: IndexPath) -> MovieViewModel?
     func getMovieModelAt(_ indexPath: IndexPath) -> Movie?
     func getHasMorePages() -> Bool
+    func addNewCreatedMovie(_ movie: Movie)
 }
 
 protocol MoviesListInteractorOutputProtocol: class {
@@ -46,6 +47,8 @@ protocol MoviesListInteractorOutputProtocol: class {
     func didFailToLoadMovies(error: Error)
     func didLoadMoreMoviesSuccessfully()
     func didFailToLoadMoreMovies(error: Error)
+    func didCreateNewMovie()
+    func didFailToCreateNewMovie(error: Error)
 }
 
 protocol MoviesListWireframeProtocol: class {
