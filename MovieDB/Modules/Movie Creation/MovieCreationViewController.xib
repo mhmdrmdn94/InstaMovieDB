@@ -111,10 +111,14 @@
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16e-t4-3tS">
                                                     <rect key="frame" x="255" y="0.0" width="80" height="30"/>
+                                                    <color key="backgroundColor" red="0.75294117647058822" green="0.83921568627450982" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="6PW-fd-Lfb"/>
                                                     </constraints>
-                                                    <state key="normal" title="Pick Poster"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <state key="normal" title="ATTACH">
+                                                        <color key="titleColor" red="0.054901960784313725" green="0.18431372549019609" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="pickPosterButtonTapped:" destination="-1" eventType="touchUpInside" id="xXp-s7-ebr"/>
                                                     </connections>
@@ -124,13 +128,13 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjf-h3-M2n">
-                                    <rect key="frame" x="30" y="451" width="315" height="40"/>
+                                    <rect key="frame" x="30" y="461" width="315" height="40"/>
                                     <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="9bn-kf-vRN"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <state key="normal" title="Create">
+                                    <state key="normal" title="CREATE NEW MOVIE">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
@@ -149,7 +153,7 @@
                                 <constraint firstItem="l7l-Y3-mHu" firstAttribute="top" secondItem="B9M-s8-LP5" secondAttribute="bottom" constant="25" id="Ocl-Ak-h86"/>
                                 <constraint firstAttribute="trailing" secondItem="l7l-Y3-mHu" secondAttribute="trailing" constant="20" id="Qzb-kE-YKc"/>
                                 <constraint firstAttribute="trailing" secondItem="B9M-s8-LP5" secondAttribute="trailing" constant="20" id="Wwx-Tf-lxE"/>
-                                <constraint firstItem="bjf-h3-M2n" firstAttribute="top" secondItem="qNT-CL-lvw" secondAttribute="bottom" constant="30" id="hjQ-IY-zPM"/>
+                                <constraint firstItem="bjf-h3-M2n" firstAttribute="top" secondItem="qNT-CL-lvw" secondAttribute="bottom" constant="40" id="hjQ-IY-zPM"/>
                                 <constraint firstItem="qNT-CL-lvw" firstAttribute="top" secondItem="l7l-Y3-mHu" secondAttribute="bottom" constant="25" id="mkZ-tq-kUi"/>
                                 <constraint firstItem="qNT-CL-lvw" firstAttribute="leading" secondItem="KSS-FM-6kX" secondAttribute="leading" constant="20" id="oJ6-F7-8kN"/>
                                 <constraint firstItem="bjf-h3-M2n" firstAttribute="leading" secondItem="KSS-FM-6kX" secondAttribute="leading" constant="30" id="pgn-EK-RIM"/>

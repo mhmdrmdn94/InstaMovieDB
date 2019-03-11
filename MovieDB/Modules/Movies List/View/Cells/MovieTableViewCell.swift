@@ -10,6 +10,8 @@ import UIKit
 
 class MovieTableViewCell: UITableViewCell {
 
+    @IBOutlet fileprivate weak var containerView: UIView!
+    @IBOutlet fileprivate weak var avatarActivityIndicator: UIActivityIndicatorView!
     @IBOutlet fileprivate weak var avatarImageView: UIImageView!
     @IBOutlet fileprivate weak var releaseDateLabel: UILabel!
     @IBOutlet fileprivate weak var titleLabel: UILabel!
@@ -26,6 +28,7 @@ class MovieTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
+        avatarActivityIndicator.isHidden = true
     }
     
     override func prepareForReuse() {
@@ -34,11 +37,23 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     func setupView() {
-        //TODO: setup rounded views and colors
+        containerView.roundCorners(withRadius: 5)
+        avatarImageView.roundCorners(withRadius: 5)
+        titleLabel.textColor = InstaMovieColor.primary.value
+        overviewLabel.textColor = InstaMovieColor.primary.value
     }
     
     private func configure(viewModel: MovieViewModel) {
-        //TODO: configure cell
+        self.avatarImageView.image = viewModel.posterImage
+        self.releaseDateLabel.text = viewModel.dateString
+        self.titleLabel.text = viewModel.title
+        self.overviewLabel.text = viewModel.overview
+        
+        //TODO: will configure ActivityIndicator based on Avatar
+        // If image == nil, then show animating loader
+        // else then show the image [default or original]
+        
+        
     }
     
 }

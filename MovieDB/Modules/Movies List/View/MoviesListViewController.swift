@@ -25,6 +25,7 @@ class MoviesListViewController: BaseViewController {
     private func setupView() {
         navigationItem.title = "MoviesDB"
         navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.backgroundColor = InstaMovieColor.secondry.value
     }
 }
 
@@ -65,31 +66,37 @@ extension MoviesListViewController {
 
 extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        //TODO: later an enum to represent allMovies and myMovies sections
-        return 1
+        return presenter?.getNumberOfSections() ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //TODO: get this from interactor according to your data source
-        return 0
+        return presenter?.getNumberOfRows(atSection: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell  = tableView.dequeueReusableCell(withIdentifier: String(describing: MovieTableViewCell.self)) as? MovieTableViewCell else {
+        guard let viewModel = presenter?.getMovieViewModelAt(indexPath),
+            let cell  = tableView.dequeueReusableCell(withIdentifier: String(describing: MovieTableViewCell.self)) as? MovieTableViewCell else {
             return UITableViewCell()
         }
+        cell.viewModel = viewModel
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let sectionType = MoviesSectionType(rawValue: section) else { return nil }
+        return sectionType.sectionTitle
+    }
+    
 }
 
 extension MoviesListViewController: MoviesListViewProtocol {
    
     func reloadData() {
-        //TODO: reload table-view
+        tableView.reloadData()
     }
     
     func reloadCellAt(indexPath: IndexPath) {
-        //TODO: reload cell at
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     func showFooterLoaderView() {

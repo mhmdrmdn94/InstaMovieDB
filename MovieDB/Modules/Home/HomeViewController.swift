@@ -10,8 +10,16 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet fileprivate weak var homeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupView() {
+        homeButton.backgroundColor = InstaMovieColor.primary.value
+        homeButton.roundCorners(withRadius: 5)
     }
     
     @IBAction func goToMoviesButtonTapped(_ sender: Any) {

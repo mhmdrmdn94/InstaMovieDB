@@ -81,11 +81,22 @@ extension MoviesListPresenter: MoviesListInteractorOutputProtocol {
         view.hideFooterLoaderView()
         view.showErrorMessage(error.localizedDescription)
     }
+    
+    func didCreateNewMovie() {
+        view.hideLoaderState()
+        view.reloadData()
+    }
+    
+    func didFailToCreateNewMovie(error: Error) {
+        view.showErrorMessage(error.localizedDescription)
+    }
+    
 }
 
 extension MoviesListPresenter: MovieCreationDelegate {
     func didCreateNewMovie(_ movie: Movie) {
-        //TODO: append to interactor.datasource then reload view
         print("Hola! a new movie has been created.   \( movie )")
+        view.showLoaderState()
+        interactor.addNewCreatedMovie(movie)
     }
 }

@@ -41,7 +41,8 @@ class MovieCreationViewController: BaseViewController {
     func setupView() {
         navigationItem.title = "Create Movie"
         overviewTextView.roundCorners(withRadius: 5, borderWidth: 0.5, borderColor: .lightGray)
-        createButton.roundCorners(withRadius: createButton.frame.height/2)
+        createButton.backgroundColor = InstaMovieColor.primary.value
+        createButton.roundCorners(withRadius: 5)
     }
     
     @IBAction func pickPosterButtonTapped(_ sender: UIButton) {
@@ -51,6 +52,7 @@ class MovieCreationViewController: BaseViewController {
     @IBAction func createButtonTapped(_ sender: Any) {
         let newMovie = self.createMovie()
         delegate?.didCreateNewMovie(newMovie)
+        navigationController?.popViewController(animated: true)
     }
     
     func createMovie() -> Movie {
