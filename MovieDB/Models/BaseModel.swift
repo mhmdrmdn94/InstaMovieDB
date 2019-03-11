@@ -11,3 +11,9 @@ import Foundation
 
 
 //TODO: Gonna use Codable instead of ObjectMapper
+
+public class BaseModel: Codable {
+   
+    //TODO: add common properties and methods
+    
+}
