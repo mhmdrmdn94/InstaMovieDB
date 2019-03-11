@@ -39,6 +39,8 @@
 		464A837B2235D6DF00A5C704 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A837A2235D6DF00A5C704 /* UIView+Constraints.swift */; };
 		464A83802235D80100A5C704 /* CustomEmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A837F2235D80100A5C704 /* CustomEmptyState.xib */; };
 		464A83822235D8B700A5C704 /* CustomEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A83812235D8B700A5C704 /* CustomEmptyState.swift */; };
+		464A83842235DD6400A5C704 /* CustomLoadingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A83832235DD6400A5C704 /* CustomLoadingFooter.swift */; };
+		464A83862235DD6F00A5C704 /* CustomLoadingFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A83852235DD6F00A5C704 /* CustomLoadingFooter.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		464A837A2235D6DF00A5C704 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		464A837F2235D80100A5C704 /* CustomEmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomEmptyState.xib; sourceTree = "<group>"; };
 		464A83812235D8B700A5C704 /* CustomEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEmptyState.swift; sourceTree = "<group>"; };
+		464A83832235DD6400A5C704 /* CustomLoadingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingFooter.swift; sourceTree = "<group>"; };
+		464A83852235DD6F00A5C704 /* CustomLoadingFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomLoadingFooter.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +273,8 @@
 		464A83522235B4BB00A5C704 /* TableViewLoadingFooter */ = {
 			isa = PBXGroup;
 			children = (
+				464A83832235DD6400A5C704 /* CustomLoadingFooter.swift */,
+				464A83852235DD6F00A5C704 /* CustomLoadingFooter.xib */,
 			);
 			path = TableViewLoadingFooter;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464A83862235DD6F00A5C704 /* CustomLoadingFooter.xib in Resources */,
 				464A83802235D80100A5C704 /* CustomEmptyState.xib in Resources */,
 				464A832922354CC100A5C704 /* LaunchScreen.storyboard in Resources */,
 				464A83732235CB6800A5C704 /* MovieTableViewCell.xib in Resources */,
@@ -408,6 +415,7 @@
 				464A83502235B46800A5C704 /* Alert.swift in Sources */,
 				464A83722235CB6800A5C704 /* MovieTableViewCell.swift in Sources */,
 				464A836B2235C03800A5C704 /* MoviesListWireframe.swift in Sources */,
+				464A83842235DD6400A5C704 /* CustomLoadingFooter.swift in Sources */,
 				464A833F2235B28A00A5C704 /* BaseModel.swift in Sources */,
 				464A835B2235B97200A5C704 /* URLRequestConverible.swift in Sources */,
 				464A834A2235B35800A5C704 /* BaseNavigationController.swift in Sources */,

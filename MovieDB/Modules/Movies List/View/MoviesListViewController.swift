@@ -80,11 +80,12 @@ extension MoviesListViewController: MoviesListViewProtocol {
     }
     
     func showFooterLoaderView() {
-        //TODO: show footer loader
+        let footerView = CustomLoadingFooter(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
+        tableView.tableFooterView = footerView
     }
     
     func hideFooterLoaderView() {
-        //TODO: hide footer loader
+        tableView.tableFooterView = nil
     }
     
     func showEmptyState() {

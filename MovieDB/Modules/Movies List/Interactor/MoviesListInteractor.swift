@@ -52,7 +52,7 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
     }
     
     func getHasMorePages() -> Bool {
-        return true
+        return hasNextPage
     }
 }
 

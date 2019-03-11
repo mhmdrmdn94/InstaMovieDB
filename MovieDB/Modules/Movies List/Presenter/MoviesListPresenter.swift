@@ -13,6 +13,9 @@ class MoviesListPresenter: MoviesListPresenterProtocol {
     fileprivate var interactor: MoviesListInteractorProtocol
     fileprivate var wireframe: MoviesListWireframeProtocol
     
+    //TODO: add view state to determine which view is presented [ .hasData, .loadingData, .loadingMoreDate, .emptyState, .errorState ]
+    
+    
     init(view: MoviesListViewProtocol,
          interactor: MoviesListInteractorProtocol,
          wireframe: MoviesListWireframeProtocol) {
@@ -34,6 +37,7 @@ class MoviesListPresenter: MoviesListPresenterProtocol {
     func getNumberOfSections() -> Int {
         return interactor.getNumberOfSections()
     }
+    
     func getNumberOfRows(atSection section: Int) -> Int {
         return interactor.getNumberOfRows(atSection: section)
     }
