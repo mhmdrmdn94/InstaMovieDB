@@ -6,7 +6,7 @@
 //  Copyright © 2019 Mo-Ramadan Abdelhafez. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public class Movie: BaseModel {
     var movieId: String
@@ -14,13 +14,16 @@ public class Movie: BaseModel {
     var overview: String?
     var posterUrlString: String?
     var releaseDate: Date?
+    var posterImage: UIImage?
     
-    init(movieId: String, title: String?, overview: String?, posterUrlString: String?, releaseDate: Date?) {
+    init(movieId: String, title: String?, overview: String?,
+         posterUrlString: String?, posterImage: UIImage?, releaseDate: Date?) {
         self.movieId = movieId
         self.title = title
         self.overview = overview
         self.releaseDate = releaseDate
         self.posterUrlString = posterUrlString
+        self.posterImage = posterImage
         super.init()
     }
     

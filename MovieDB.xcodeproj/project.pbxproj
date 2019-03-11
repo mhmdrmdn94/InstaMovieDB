@@ -41,6 +41,8 @@
 		464A83822235D8B700A5C704 /* CustomEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A83812235D8B700A5C704 /* CustomEmptyState.swift */; };
 		464A83842235DD6400A5C704 /* CustomLoadingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A83832235DD6400A5C704 /* CustomLoadingFooter.swift */; };
 		464A83862235DD6F00A5C704 /* CustomLoadingFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A83852235DD6F00A5C704 /* CustomLoadingFooter.xib */; };
+		464A838A223659AD00A5C704 /* MovieCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A8388223659AD00A5C704 /* MovieCreationViewController.swift */; };
+		464A838B223659AD00A5C704 /* MovieCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A8389223659AD00A5C704 /* MovieCreationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		464A83812235D8B700A5C704 /* CustomEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEmptyState.swift; sourceTree = "<group>"; };
 		464A83832235DD6400A5C704 /* CustomLoadingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingFooter.swift; sourceTree = "<group>"; };
 		464A83852235DD6F00A5C704 /* CustomLoadingFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomLoadingFooter.xib; sourceTree = "<group>"; };
+		464A8388223659AD00A5C704 /* MovieCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCreationViewController.swift; sourceTree = "<group>"; };
+		464A8389223659AD00A5C704 /* MovieCreationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCreationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 			children = (
 				464A83382235B22E00A5C704 /* Home */,
 				464A835E2235BDF300A5C704 /* Movies List */,
+				464A83872236597B00A5C704 /* Movie Creation */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -335,6 +340,15 @@
 			path = TableViewEmptyState;
 			sourceTree = "<group>";
 		};
+		464A83872236597B00A5C704 /* Movie Creation */ = {
+			isa = PBXGroup;
+			children = (
+				464A8388223659AD00A5C704 /* MovieCreationViewController.swift */,
+				464A8389223659AD00A5C704 /* MovieCreationViewController.xib */,
+			);
+			path = "Movie Creation";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,6 +409,7 @@
 			files = (
 				464A83862235DD6F00A5C704 /* CustomLoadingFooter.xib in Resources */,
 				464A83802235D80100A5C704 /* CustomEmptyState.xib in Resources */,
+				464A838B223659AD00A5C704 /* MovieCreationViewController.xib in Resources */,
 				464A832922354CC100A5C704 /* LaunchScreen.storyboard in Resources */,
 				464A83732235CB6800A5C704 /* MovieTableViewCell.xib in Resources */,
 				464A832622354CC100A5C704 /* Assets.xcassets in Resources */,
@@ -435,6 +450,7 @@
 				464A83602235BFA600A5C704 /* MoviesListBuilder.swift in Sources */,
 				464A833322354D2400A5C704 /* HomeViewController.swift in Sources */,
 				464A83792235D6B100A5C704 /* UIView+nib.swift in Sources */,
+				464A838A223659AD00A5C704 /* MovieCreationViewController.swift in Sources */,
 				464A834E2235B3B800A5C704 /* InstaMovieColor.swift in Sources */,
 				464A83482235B30F00A5C704 /* BaseViewController.swift in Sources */,
 			);
