@@ -6,16 +6,20 @@
 //  Copyright © 2019 Mo-Ramadan Abdelhafez. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct MovieViewModel {
     var title: String?
     var overview: String?
     var releaseDate: Date?
-    var posterUrlString: String?
+    var posterImage: UIImage?
     
     var dateString: String {
-        //TODO: show release date in a pretty formate
-        return releaseDate?.description ?? "No Date!"
+        if let date = releaseDate {
+            let dateString = InstaDateFormatter.shared.getString(date: date, format: "MMMM yyyy")
+            return dateString
+        } else {
+            return "release date N/A"
+        }
     }
 }

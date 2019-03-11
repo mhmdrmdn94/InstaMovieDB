@@ -73,9 +73,11 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell  = tableView.dequeueReusableCell(withIdentifier: String(describing: MovieTableViewCell.self)) as? MovieTableViewCell else {
+        guard let viewModel = presenter?.getMovieViewModelAt(indexPath),
+            let cell  = tableView.dequeueReusableCell(withIdentifier: String(describing: MovieTableViewCell.self)) as? MovieTableViewCell else {
             return UITableViewCell()
         }
+        cell.viewModel = viewModel
         return cell
     }
     

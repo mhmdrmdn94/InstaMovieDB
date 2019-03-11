@@ -43,6 +43,7 @@
 		464A83862235DD6F00A5C704 /* CustomLoadingFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A83852235DD6F00A5C704 /* CustomLoadingFooter.xib */; };
 		464A838A223659AD00A5C704 /* MovieCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A8388223659AD00A5C704 /* MovieCreationViewController.swift */; };
 		464A838B223659AD00A5C704 /* MovieCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A8389223659AD00A5C704 /* MovieCreationViewController.xib */; };
+		464A838D2236CECB00A5C704 /* InstaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		464A83852235DD6F00A5C704 /* CustomLoadingFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomLoadingFooter.xib; sourceTree = "<group>"; };
 		464A8388223659AD00A5C704 /* MovieCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCreationViewController.swift; sourceTree = "<group>"; };
 		464A8389223659AD00A5C704 /* MovieCreationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCreationViewController.xib; sourceTree = "<group>"; };
+		464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaDateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 			children = (
 				464A834D2235B3B800A5C704 /* InstaMovieColor.swift */,
 				464A834F2235B46800A5C704 /* Alert.swift */,
+				464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				464A835D2235BC3500A5C704 /* MoviesListProtocols.swift in Sources */,
 				464A836F2235C68500A5C704 /* MovieViewModel.swift in Sources */,
 				464A83442235B2D000A5C704 /* UIView+rounded.swift in Sources */,
+				464A838D2236CECB00A5C704 /* InstaDateFormatter.swift in Sources */,
 				464A83752235D1BE00A5C704 /* CustomLoadingView.swift in Sources */,
 				464A837B2235D6DF00A5C704 /* UIView+Constraints.swift in Sources */,
 				464A831F22354CC000A5C704 /* AppDelegate.swift in Sources */,

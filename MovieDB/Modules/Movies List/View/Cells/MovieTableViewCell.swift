@@ -38,7 +38,10 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     private func configure(viewModel: MovieViewModel) {
-        //TODO: configure cell
+        self.avatarImageView.image = viewModel.posterImage
+        self.releaseDateLabel.text = viewModel.dateString
+        self.titleLabel.text = viewModel.title
+        self.overviewLabel.text = viewModel.overview
     }
     
 }
