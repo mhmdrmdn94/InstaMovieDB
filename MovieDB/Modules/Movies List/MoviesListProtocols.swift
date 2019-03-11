@@ -28,6 +28,7 @@ protocol MoviesListPresenterProtocol: class {
     func getMovieViewModelAt(_ indexPath: IndexPath) -> MovieViewModel?
     func getMovieModelAt(_ indexPath: IndexPath) -> Movie?
     func getHasMorePages() -> Bool
+    func openCreateMovieViewController()
 }
 
 protocol MoviesListInteractorProtocol: class {
@@ -48,7 +49,7 @@ protocol MoviesListInteractorOutputProtocol: class {
 }
 
 protocol MoviesListWireframeProtocol: class {
-    func openCreateNewMovieModule(view: MoviesListViewProtocol)
+    func openCreateNewMovieModule(view: MoviesListViewProtocol, delegate: MovieCreationDelegate)
 }
 
 protocol MoviesListBuilderProtocol: class {

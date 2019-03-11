@@ -53,6 +53,11 @@ class MoviesListPresenter: MoviesListPresenterProtocol {
     func getHasMorePages() -> Bool {
         return interactor.getHasMorePages()
     }
+    
+    func openCreateMovieViewController() {
+        wireframe.openCreateNewMovieModule(view: view, delegate: self)
+    }
+    
 }
 
 extension MoviesListPresenter: MoviesListInteractorOutputProtocol {
@@ -78,3 +83,9 @@ extension MoviesListPresenter: MoviesListInteractorOutputProtocol {
     }
 }
 
+extension MoviesListPresenter: MovieCreationDelegate {
+    func didCreateNewMovie(_ movie: Movie) {
+        //TODO: append to interactor.datasource then reload view
+        print("Hola! a new movie has been created.")
+    }
+}

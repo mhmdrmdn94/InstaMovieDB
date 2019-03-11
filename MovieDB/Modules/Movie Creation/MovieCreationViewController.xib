@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieCreationViewController" customModule="MovieDB" customModuleProvider="target">
             <connections>
+                <outlet property="createButton" destination="bjf-h3-M2n" id="ZEC-Ye-cyg"/>
+                <outlet property="overviewTextView" destination="61m-yT-vyz" id="Fc5-fp-drk"/>
+                <outlet property="pickDateButton" destination="ltN-rm-5Ej" id="eJz-os-A0u"/>
+                <outlet property="pickPosterButton" destination="16e-t4-3tS" id="eLV-Ii-q1F"/>
+                <outlet property="titleTextField" destination="Ufc-Jm-vrM" id="3WB-p4-jyc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -67,6 +72,9 @@
                                                         <constraint firstAttribute="width" constant="80" id="AMf-SS-ZI5"/>
                                                     </constraints>
                                                     <state key="normal" title="Pick Date"/>
+                                                    <connections>
+                                                        <action selector="pickDateButtonTapped:" destination="-1" eventType="touchUpInside" id="iwh-oe-nIG"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -105,7 +113,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vA7-eR-XQa">
                                             <rect key="frame" x="0.0" y="28.5" width="335" height="30"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIp-vN-eOV">
+                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIp-vN-eOV">
                                                     <rect key="frame" x="0.0" y="0.0" width="247" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -117,6 +125,9 @@
                                                         <constraint firstAttribute="width" constant="80" id="6PW-fd-Lfb"/>
                                                     </constraints>
                                                     <state key="normal" title="Pick Poster"/>
+                                                    <connections>
+                                                        <action selector="pickPosterButtonTapped:" destination="-1" eventType="touchUpInside" id="xXp-s7-ebr"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -132,6 +143,9 @@
                                     <state key="normal" title="Create">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="createButtonTapped:" destination="-1" eventType="touchUpInside" id="9wH-oo-LyY"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

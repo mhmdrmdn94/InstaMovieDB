@@ -9,11 +9,14 @@
 import UIKit
 
 class MoviesListWireframe: MoviesListWireframeProtocol {
-    func openCreateNewMovieModule(view: MoviesListViewProtocol) {
+    func openCreateNewMovieModule(view: MoviesListViewProtocol, delegate: MovieCreationDelegate) {
         guard let sourceView = view as? UIViewController else {
             return
         }
-        //TODO: push create-new-movie-view-controller
+        let viewController = MovieCreationViewController()
+        viewController.delegate = delegate
+        sourceView.navigationController?.pushViewController(viewController, animated: true)
+        
     }
     
     

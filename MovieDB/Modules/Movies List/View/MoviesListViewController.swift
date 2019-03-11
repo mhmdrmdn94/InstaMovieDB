@@ -18,11 +18,23 @@ class MoviesListViewController: BaseViewController {
         super.viewDidLoad()
         setupView()
         setupTableView()
+        initNavbar()
         presenter?.loadMovies()
     }
     
     private func setupView() {
         //TODO: setup colors and navbar title ;;; make it largeTitle
+    }
+}
+
+fileprivate extension MoviesListViewController {
+    func initNavbar() {
+        let createMovieButton = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(createMovieButttonTapped(sender:)))
+        navigationItem.rightBarButtonItem = createMovieButton
+    }
+    
+    @objc func createMovieButttonTapped(sender: UIBarButtonItem) {
+        presenter?.openCreateMovieViewController()
     }
 }
 
