@@ -54,8 +54,12 @@ class MovieCreationViewController: BaseViewController {
     }
     
     func createMovie() -> Movie {
-        //TODO: collect you data
-        let  movie = Movie(movieId: "", title: nil, overview: nil, posterUrlString: nil, releaseDate: nil)
+        let movieId = UUID().uuidString
+        let title = titleTextField.text
+        let overview = overviewTextView.text
+        let posterImage = selectedImage
+        let releaseDate = selectedDate
+        let  movie = Movie(movieId: movieId, title: title, overview: overview, posterUrlString: nil, posterImage: posterImage, releaseDate: releaseDate)
         return movie
         
     }
@@ -79,6 +83,7 @@ fileprivate extension MovieCreationViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM yyyy"
         dateTextField.text = formatter.string(from: datePicker?.date ?? Date())
+        selectedDate = datePicker?.date
         view.endEditing(true)
     }
     

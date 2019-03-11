@@ -86,6 +86,6 @@ extension MoviesListPresenter: MoviesListInteractorOutputProtocol {
 extension MoviesListPresenter: MovieCreationDelegate {
     func didCreateNewMovie(_ movie: Movie) {
         //TODO: append to interactor.datasource then reload view
-        print("Hola! a new movie has been created.")
+        print("Hola! a new movie has been created.   \( movie )")
     }
 }
