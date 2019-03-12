@@ -9,9 +9,22 @@
 import Foundation
 
 protocol URLRequestConvertible {
+    func asURLRequest() throws -> URLRequest
+}
+
+protocol InstaURLRequestConvertible: URLRequestConvertible {
     var baseUrl:    String?         { get }
     var path:       String          { get }
     var parameters: Parameters?     { get }
     var headers:    HTTPHeaders     { get }
     var method:     HTTPMethod      { get }
 }
+
+//extension InstaURLRequestConvertible {
+//    func asURLRequest() throws -> URLRequest {
+//
+//    }
+//
+//}
+
+

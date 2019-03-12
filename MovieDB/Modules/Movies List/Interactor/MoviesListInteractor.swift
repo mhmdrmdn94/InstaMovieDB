@@ -36,7 +36,24 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
     }
     
     func loadMovies() {
-        self.presenter?.didLoadMoviesSuccessfully()
+        let moviesService = MoviesService()
+        moviesService.getMovies(
+            page: nextPageNumber,
+            onSuccess: { [weak self] (movies) in
+                
+                guard let strongSelf = self else { return }
+                var mutableMixedMovies = strongSelf.mixedMovies
+                var mutableAllMovies = mutableMixedMovies[MoviesSectionType.allMovies.rawValue]
+                mutableAllMovies = movies
+                mutableMixedMovies.remove(at: MoviesSectionType.allMovies.rawValue)
+                mutableMixedMovies.insert(mutableAllMovies, at: MoviesSectionType.allMovies.rawValue)
+                strongSelf.mixedMovies = mutableMixedMovies
+                strongSelf.presenter?.didLoadMoviesSuccessfully()
+                
+        }) { [weak self] (error) in
+            guard let strongSelf = self else { return }
+            strongSelf.presenter?.didFailToLoadMovies(error: error)
+        }
     }
     
     func loadMoreMovies() {

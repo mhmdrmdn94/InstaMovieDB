@@ -44,6 +44,9 @@
 		464A838A223659AD00A5C704 /* MovieCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A8388223659AD00A5C704 /* MovieCreationViewController.swift */; };
 		464A838B223659AD00A5C704 /* MovieCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A8389223659AD00A5C704 /* MovieCreationViewController.xib */; };
 		464A838D2236CECB00A5C704 /* InstaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */; };
+		464A838F2237160000A5C704 /* InstaNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A838E2237160000A5C704 /* InstaNetwork.swift */; };
+		46D960EC22383D18003F31D4 /* MoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D960EB22383D18003F31D4 /* MoviesRouter.swift */; };
+		46D960EE22383D24003F31D4 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D960ED22383D24003F31D4 /* MoviesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		464A8388223659AD00A5C704 /* MovieCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCreationViewController.swift; sourceTree = "<group>"; };
 		464A8389223659AD00A5C704 /* MovieCreationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCreationViewController.xib; sourceTree = "<group>"; };
 		464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaDateFormatter.swift; sourceTree = "<group>"; };
+		464A838E2237160000A5C704 /* InstaNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaNetwork.swift; sourceTree = "<group>"; };
+		46D960EB22383D18003F31D4 /* MoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRouter.swift; sourceTree = "<group>"; };
+		46D960ED22383D24003F31D4 /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +308,7 @@
 				464A83562235B57B00A5C704 /* APIConstants.swift */,
 				464A83582235B81B00A5C704 /* HTTPMethod.swift.swift */,
 				464A835A2235B97200A5C704 /* URLRequestConverible.swift */,
+				464A838E2237160000A5C704 /* InstaNetwork.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -309,6 +316,8 @@
 		464A83552235B55600A5C704 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				46D960EB22383D18003F31D4 /* MoviesRouter.swift */,
+				46D960ED22383D24003F31D4 /* MoviesService.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -441,6 +450,7 @@
 				464A83822235D8B700A5C704 /* CustomEmptyState.swift in Sources */,
 				464A83592235B81B00A5C704 /* HTTPMethod.swift.swift in Sources */,
 				464A83422235B2B300A5C704 /* UIColor+init.swift in Sources */,
+				464A838F2237160000A5C704 /* InstaNetwork.swift in Sources */,
 				464A83672235BFCA00A5C704 /* MoviesListViewController.swift in Sources */,
 				464A835D2235BC3500A5C704 /* MoviesListProtocols.swift in Sources */,
 				464A836F2235C68500A5C704 /* MovieViewModel.swift in Sources */,
@@ -448,7 +458,9 @@
 				464A838D2236CECB00A5C704 /* InstaDateFormatter.swift in Sources */,
 				464A83752235D1BE00A5C704 /* CustomLoadingView.swift in Sources */,
 				464A837B2235D6DF00A5C704 /* UIView+Constraints.swift in Sources */,
+				46D960EE22383D24003F31D4 /* MoviesService.swift in Sources */,
 				464A831F22354CC000A5C704 /* AppDelegate.swift in Sources */,
+				46D960EC22383D18003F31D4 /* MoviesRouter.swift in Sources */,
 				464A83572235B57B00A5C704 /* APIConstants.swift in Sources */,
 				464A83642235BFBA00A5C704 /* MoviesListPresenter.swift in Sources */,
 				464A83602235BFA600A5C704 /* MoviesListBuilder.swift in Sources */,

@@ -8,15 +8,15 @@
 
 import UIKit
 
-public class Movie: BaseModel {
-    var movieId: String
+public class Movie: Codable {
+    var movieId: Int
     var title: String?
     var overview: String?
     var posterUrlString: String?
     var releaseDate: Date?
     var posterImage: UIImage?
     
-    init(movieId: String, title: String?, overview: String?,
+    init(movieId: Int, title: String?, overview: String?,
          posterUrlString: String?, posterImage: UIImage?, releaseDate: Date?) {
         self.movieId = movieId
         self.title = title
@@ -24,11 +24,6 @@ public class Movie: BaseModel {
         self.releaseDate = releaseDate
         self.posterUrlString = posterUrlString
         self.posterImage = posterImage
-        super.init()
-    }
-    
-    required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
     }
     
     enum CodingKeys: String, CodingKey {
