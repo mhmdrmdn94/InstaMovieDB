@@ -45,6 +45,7 @@
 		464A838B223659AD00A5C704 /* MovieCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464A8389223659AD00A5C704 /* MovieCreationViewController.xib */; };
 		464A838D2236CECB00A5C704 /* InstaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */; };
 		464A838F2237160000A5C704 /* InstaNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A838E2237160000A5C704 /* InstaNetwork.swift */; };
+		4662504022397E2400E95DB6 /* InstaImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662503F22397E2400E95DB6 /* InstaImageView.swift */; };
 		46D960EC22383D18003F31D4 /* MoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D960EB22383D18003F31D4 /* MoviesRouter.swift */; };
 		46D960EE22383D24003F31D4 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D960ED22383D24003F31D4 /* MoviesService.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		464A8389223659AD00A5C704 /* MovieCreationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCreationViewController.xib; sourceTree = "<group>"; };
 		464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaDateFormatter.swift; sourceTree = "<group>"; };
 		464A838E2237160000A5C704 /* InstaNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaNetwork.swift; sourceTree = "<group>"; };
+		4662503F22397E2400E95DB6 /* InstaImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaImageView.swift; sourceTree = "<group>"; };
 		46D960EB22383D18003F31D4 /* MoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRouter.swift; sourceTree = "<group>"; };
 		46D960ED22383D24003F31D4 /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -271,6 +273,7 @@
 				464A834D2235B3B800A5C704 /* InstaMovieColor.swift */,
 				464A834F2235B46800A5C704 /* Alert.swift */,
 				464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */,
+				4662503F22397E2400E95DB6 /* InstaImageView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4662504022397E2400E95DB6 /* InstaImageView.swift in Sources */,
 				464A836D2235C3D000A5C704 /* Movie.swift in Sources */,
 				464A83502235B46800A5C704 /* Alert.swift in Sources */,
 				464A83722235CB6800A5C704 /* MovieTableViewCell.swift in Sources */,

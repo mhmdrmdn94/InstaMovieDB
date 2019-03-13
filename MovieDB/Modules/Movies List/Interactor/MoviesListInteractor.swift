@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum MoviesSectionType: Int {
     case myMovies = 0, allMovies
@@ -121,7 +122,7 @@ fileprivate extension MoviesListInteractor {
         viewModel.title = movie.title
         viewModel.overview = movie.overview
         viewModel.releaseDate = movie.releaseDate
-        viewModel.posterImage = movie.posterImage
+        viewModel.posterImageUrlString = movie.fullPosterUrlString
         return viewModel
     }
 }

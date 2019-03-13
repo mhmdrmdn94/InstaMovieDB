@@ -12,7 +12,7 @@ struct MovieViewModel {
     var title: String?
     var overview: String?
     var releaseDate: Date?
-    var posterImage: UIImage?
+    var posterImageUrlString: String?
     
     var dateString: String {
         if let date = releaseDate {

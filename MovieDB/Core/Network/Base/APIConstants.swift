@@ -11,6 +11,7 @@
 fileprivate enum APIConstants: String {
     case baseUrl = "http://themoviedb.org"
     case baseAPIUrl = "http://api.themoviedb.org/3/discover/movie"
+    case baseImagesUrl = "https://image.tmdb.org/t/p/w200"
     case apiKey = "acea91d2bff1c53e6604e4985b6989e2"
 }
 
@@ -51,6 +52,15 @@ struct Constants {
             return APIConstants.apiKey.rawValue
         case .release:
             return APIConstants.apiKey.rawValue
+        }
+    }
+    
+    static var baseImagesUrl: String {
+        switch environment {
+        case .debug:
+            return APIConstants.baseImagesUrl.rawValue
+        case .release:
+            return APIConstants.baseImagesUrl.rawValue
         }
     }
 }

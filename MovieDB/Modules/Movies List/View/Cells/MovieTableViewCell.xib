@@ -22,7 +22,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwf-s0-OCW">
                         <rect key="frame" x="8" y="8" width="558" height="316.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jUz-bt-o6R">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jUz-bt-o6R" customClass="InstaImageView" customModule="MovieDB" customModuleProvider="target">
                                 <rect key="frame" x="12" y="12" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="TXZ-gt-ODf"/>

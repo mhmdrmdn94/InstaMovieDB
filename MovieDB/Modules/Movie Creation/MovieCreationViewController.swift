@@ -61,7 +61,7 @@ class MovieCreationViewController: BaseViewController {
         let overview = overviewTextView.text
         let posterImage = selectedImage
         let releaseDate = selectedDate
-        let  movie = Movie(movieId: movieId, title: title, overview: overview, posterUrlString: nil, posterImage: posterImage, releaseDate: releaseDate)
+        let  movie = Movie(movieId: movieId, title: title, overview: overview, posterPath: nil, posterImage: posterImage, releaseDate: releaseDate)
         return movie
         
     }

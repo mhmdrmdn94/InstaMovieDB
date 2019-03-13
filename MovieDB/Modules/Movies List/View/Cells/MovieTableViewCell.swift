@@ -12,7 +12,7 @@ class MovieTableViewCell: UITableViewCell {
 
     @IBOutlet fileprivate weak var containerView: UIView!
     @IBOutlet fileprivate weak var avatarActivityIndicator: UIActivityIndicatorView!
-    @IBOutlet fileprivate weak var avatarImageView: UIImageView!
+    @IBOutlet fileprivate weak var avatarImageView: InstaImageView!
     @IBOutlet fileprivate weak var releaseDateLabel: UILabel!
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var overviewLabel: UILabel!
@@ -44,16 +44,12 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     private func configure(viewModel: MovieViewModel) {
-        self.avatarImageView.image = viewModel.posterImage
+       if let imageUrl = URL(string: viewModel.posterImageUrlString ?? "") {
+            avatarImageView.setImage(withUrl: imageUrl)
+        }
         self.releaseDateLabel.text = viewModel.dateString
         self.titleLabel.text = viewModel.title
         self.overviewLabel.text = viewModel.overview
-        
-        //TODO: will configure ActivityIndicator based on Avatar
-        // If image == nil, then show animating loader
-        // else then show the image [default or original]
-        
-        
     }
     
 }
