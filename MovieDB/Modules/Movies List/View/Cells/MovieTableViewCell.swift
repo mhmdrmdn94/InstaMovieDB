@@ -45,12 +45,15 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     private func configure(viewModel: MovieViewModel) {
-       if let imageUrl = URL(string: viewModel.posterImageUrlString ?? "") {
-            avatarImageView.setImage(withUrl: imageUrl)
-        }
         self.releaseDateLabel.text = viewModel.dateString
         self.titleLabel.text = viewModel.title
         self.overviewLabel.text = viewModel.overview
+        
+        if let localImage = viewModel.localPosterImage {
+            avatarImageView.image = localImage
+        } else if let imageUrl = URL(string: viewModel.posterImageUrlString ?? "") {
+            avatarImageView.setImage(withUrl: imageUrl)
+        }
     }
     
 }

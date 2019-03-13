@@ -14,7 +14,7 @@ public class Movie: Codable {
     var overview: String?
     var posterPath: String?
     var releaseDate: Date?
-    var posterImage: UIImage?
+    var posterImage: UIImage?   //for local movies
     
     var fullPosterUrlString: String? {
         if let path = posterPath {

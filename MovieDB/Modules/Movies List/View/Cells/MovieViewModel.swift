@@ -13,6 +13,7 @@ struct MovieViewModel {
     var overview: String?
     var releaseDate: Date?
     var posterImageUrlString: String?
+    var localPosterImage: UIImage?   //for thos movies which created locally
     
     var dateString: String {
         if let date = releaseDate {

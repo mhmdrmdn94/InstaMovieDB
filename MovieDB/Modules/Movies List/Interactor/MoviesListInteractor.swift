@@ -122,6 +122,7 @@ fileprivate extension MoviesListInteractor {
         viewModel.title = movie.title
         viewModel.overview = movie.overview
         viewModel.releaseDate = movie.releaseDate
+        viewModel.localPosterImage = movie.posterImage
         viewModel.posterImageUrlString = movie.fullPosterUrlString
         return viewModel
     }
