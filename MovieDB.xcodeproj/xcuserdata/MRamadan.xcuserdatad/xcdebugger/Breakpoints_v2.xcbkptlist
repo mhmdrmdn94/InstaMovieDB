@@ -6,15 +6,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDB/Modules/Movies List/View/Cells/MovieTableViewCell.swift"
-            timestampString = "574194078.371619"
+            timestampString = "574195359.072296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "configure(viewModel:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MovieDB/Modules/Movies List/View/Cells/MovieTableViewCell.swift"
-            timestampString = "574194078.37213"
+            filePath = "MovieDB/Core/Helpers/InstaImageView.swift"
+            timestampString = "574195359.072682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "configure(viewModel:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "setImage(withUrl:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieDB/Core/Helpers/InstaImageView.swift"
+            timestampString = "574195359.073283"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "setImage(withUrl:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -34,6 +34,7 @@ class MovieTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         viewModel = nil
+        avatarImageView.image = nil
     }
     
     func setupView() {

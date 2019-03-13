@@ -46,6 +46,7 @@
 		464A838D2236CECB00A5C704 /* InstaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */; };
 		464A838F2237160000A5C704 /* InstaNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A838E2237160000A5C704 /* InstaNetwork.swift */; };
 		4662504022397E2400E95DB6 /* InstaImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662503F22397E2400E95DB6 /* InstaImageView.swift */; };
+		46625042223982A800E95DB6 /* InstaImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46625041223982A800E95DB6 /* InstaImageCache.swift */; };
 		46D960EC22383D18003F31D4 /* MoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D960EB22383D18003F31D4 /* MoviesRouter.swift */; };
 		46D960EE22383D24003F31D4 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D960ED22383D24003F31D4 /* MoviesService.swift */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,7 @@
 		464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaDateFormatter.swift; sourceTree = "<group>"; };
 		464A838E2237160000A5C704 /* InstaNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaNetwork.swift; sourceTree = "<group>"; };
 		4662503F22397E2400E95DB6 /* InstaImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaImageView.swift; sourceTree = "<group>"; };
+		46625041223982A800E95DB6 /* InstaImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaImageCache.swift; sourceTree = "<group>"; };
 		46D960EB22383D18003F31D4 /* MoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRouter.swift; sourceTree = "<group>"; };
 		46D960ED22383D24003F31D4 /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -274,6 +276,7 @@
 				464A834F2235B46800A5C704 /* Alert.swift */,
 				464A838C2236CECB00A5C704 /* InstaDateFormatter.swift */,
 				4662503F22397E2400E95DB6 /* InstaImageView.swift */,
+				46625041223982A800E95DB6 /* InstaImageCache.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				464A83672235BFCA00A5C704 /* MoviesListViewController.swift in Sources */,
 				464A835D2235BC3500A5C704 /* MoviesListProtocols.swift in Sources */,
 				464A836F2235C68500A5C704 /* MovieViewModel.swift in Sources */,
+				46625042223982A800E95DB6 /* InstaImageCache.swift in Sources */,
 				464A83442235B2D000A5C704 /* UIView+rounded.swift in Sources */,
 				464A838D2236CECB00A5C704 /* InstaDateFormatter.swift in Sources */,
 				464A83752235D1BE00A5C704 /* CustomLoadingView.swift in Sources */,
