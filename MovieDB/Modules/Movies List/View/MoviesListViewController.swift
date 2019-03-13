@@ -87,43 +87,79 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
         return sectionType.sectionTitle
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if isLoadMoreIndexPath(indexPath) {
+            presenter?.loadMoreMovies()
+        }
+    }
+    
+    private func isLoadMoreIndexPath(_ indexPath: IndexPath) -> Bool {
+        let hasNextPage = presenter?.getHasMorePages() ?? false
+        if !hasNextPage {
+            return false
+        }
+        
+        let totalNumberOfRows = presenter?.getNumberOfRows(atSection: MoviesSectionType.allMovies.rawValue) ?? 0
+        let currentRowIndex = indexPath.row
+        if totalNumberOfRows == 0 || ((totalNumberOfRows - 1) > currentRowIndex) {
+            return false
+        }
+        
+        return true
+    }
 }
 
 extension MoviesListViewController: MoviesListViewProtocol {
    
     func reloadData() {
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     func reloadCellAt(indexPath: IndexPath) {
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
     }
     
     func showFooterLoaderView() {
-        let footerView = CustomLoadingFooter(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
-        tableView.tableFooterView = footerView
+        DispatchQueue.main.async { [weak self] in
+            let footerView = CustomLoadingFooter(frame: CGRect(x: 0, y: 0, width: self?.tableView.frame.width ?? 100, height: 30))
+            self?.tableView.tableFooterView = footerView
+        }
     }
     
     func hideFooterLoaderView() {
-        tableView.tableFooterView = nil
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.tableFooterView = nil
+        }
     }
     
     func showEmptyState() {
-        let emptyView = CustomEmptyState()
-        tableView.backgroundView = emptyView
+        DispatchQueue.main.async { [weak self] in
+            let emptyView = CustomEmptyState()
+            self?.tableView.backgroundView = emptyView
+        }
     }
     
     func hideEmptyState() {
-        tableView.backgroundView = nil
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.backgroundView = nil
+        }
     }
     
     func showLoaderState() {
-        let loadingView = CustomLoadingView()
-        tableView.backgroundView = loadingView
+        DispatchQueue.main.async { [weak self] in
+            let loadingView = CustomLoadingView()
+            self?.tableView.backgroundView = loadingView
+        }
     }
     
     func hideLoaderState() {
-         tableView.backgroundView = nil
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.backgroundView = nil
+        }
     }
     
     func showErrorMessage(_ message: String) {

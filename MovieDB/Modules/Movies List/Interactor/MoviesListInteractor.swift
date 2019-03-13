@@ -29,6 +29,7 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
     fileprivate var mixedMovies: [[Movie]]
     fileprivate var hasNextPage = true
     fileprivate var nextPageNumber = 1
+    fileprivate let moviesPerPage = 20
     
     init() {
         let myMovies = [Movie]()
@@ -43,6 +44,12 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
             onSuccess: { [weak self] (movies) in
                 
                 guard let strongSelf = self else { return }
+                if movies.count < strongSelf.moviesPerPage {
+                    strongSelf.hasNextPage = false
+                } else {
+                    strongSelf.nextPageNumber = strongSelf.nextPageNumber + 1
+                }
+                
                 var mutableMixedMovies = strongSelf.mixedMovies
                 var mutableAllMovies = mutableMixedMovies[MoviesSectionType.allMovies.rawValue]
                 mutableAllMovies = movies
@@ -58,7 +65,30 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
     }
     
     func loadMoreMovies() {
-        self.presenter?.didLoadMoreMoviesSuccessfully()
+        let moviesService = MoviesService()
+        moviesService.getMovies(
+            page: nextPageNumber,
+            onSuccess: { [weak self] (movies) in
+                
+                guard let strongSelf = self else { return }
+                if movies.count < strongSelf.moviesPerPage {
+                    strongSelf.hasNextPage = false
+                } else {
+                    strongSelf.nextPageNumber = strongSelf.nextPageNumber + 1
+                }
+                
+                var mutableMixedMovies = strongSelf.mixedMovies
+                var mutableAllMovies = mutableMixedMovies[MoviesSectionType.allMovies.rawValue]
+                mutableAllMovies.append(contentsOf: movies)
+                mutableMixedMovies.remove(at: MoviesSectionType.allMovies.rawValue)
+                mutableMixedMovies.insert(mutableAllMovies, at: MoviesSectionType.allMovies.rawValue)
+                strongSelf.mixedMovies = mutableMixedMovies
+                strongSelf.presenter?.didLoadMoreMoviesSuccessfully()
+                
+        }) { [weak self] (error) in
+            guard let strongSelf = self else { return }
+            strongSelf.presenter?.didFailToLoadMoreMovies(error: error)
+        }
     }
     
     func getNumberOfSections() -> Int {
