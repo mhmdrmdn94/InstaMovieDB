@@ -8,6 +8,16 @@
 
 import Foundation
 
+public typealias Parameters = [String: Any]
+public typealias HTTPHeaders = [String:String]
+
+public enum HTTPMethod: String {
+    case get     = "GET"
+    case post    = "POST"
+    case put     = "PUT"
+    case delete  = "DELETE"
+}
+
 protocol URLRequestConvertible {
     func asURLRequest() throws -> URLRequest
 }
@@ -15,16 +25,38 @@ protocol URLRequestConvertible {
 protocol InstaURLRequestConvertible: URLRequestConvertible {
     var baseUrl:    String?         { get }
     var path:       String          { get }
-    var parameters: Parameters?     { get }
-    var headers:    HTTPHeaders     { get }
+    var headers:    HTTPHeaders?    { get }
     var method:     HTTPMethod      { get }
+    var parameters: Parameters?     { get }
+    var parametersEncoding: ParametersEncoding { get }
 }
 
-//extension InstaURLRequestConvertible {
-//    func asURLRequest() throws -> URLRequest {
-//
-//    }
-//
-//}
+
+extension InstaURLRequestConvertible {
+    var baseUrl: String? {
+        return nil
+    }
+    var headers: HTTPHeaders? {
+        return nil
+    }
+    var parameters: Parameters? {
+        return nil
+    }
+    var parametersEncoding: ParametersEncoding {
+        return ParametersEncoding.query
+    }
+    
+    func asURLRequest() throws -> URLRequest {
+        let url = try (baseUrl ?? Constants.baseAPIURL).asURL()
+        let urlWithPath = url.appendingPathComponent(path)
+        var urlRequest = URLRequest(url: urlWithPath)
+        urlRequest.httpMethod = method.rawValue
+        
+        if let params = parameters {
+            urlRequest = try parametersEncoding.encode(request: urlRequest, parameters: params)
+        }
+        return urlRequest
+    }
+}
 
 

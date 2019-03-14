@@ -8,10 +8,11 @@
 
 import Foundation
 
+protocol MoviesServiceProtocol {
+    func getMovies(page: Int?, onSuccess: @escaping ([Movie]) -> (), onFailure: @escaping (InstaNetworkError) -> ())
+}
 
-//TODO: this will be the  Router.URLRequest to call InstaNetwork to get data
-
-class MoviesService: NSObject {
+class MoviesService: NSObject, MoviesServiceProtocol {
     
     lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -21,45 +22,47 @@ class MoviesService: NSObject {
     
     func getMovies(page: Int? = nil,
                    onSuccess: @escaping ([Movie]) -> (),
-                   onFailure: @escaping (Error) -> ()) {
+                   onFailure: @escaping (InstaNetworkError) -> ()) {
         
-        var urlString = "http://api.themoviedb.org/3/discover/movie?api_key=acea91d2bff1c53e6604e4985b6989e2"
+        var parameters: Parameters = ["api_key": "acea91d2bff1c53e6604e4985b6989e2"]
         if let page = page {
-            urlString = urlString + "&page=" + page.description
+            parameters["page"] = page.description
         }
         
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        
-        let request = URLRequest(url: url)
-        InstaNetwork.request(
-            request: request,
-            onSuccess: { (data, response) in
-                
-                do{
-                    let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
-                    if let json = jsonResponse as? [String:Any],
-                        let moviesJson = json["results"] as? [[String:Any]] {
-                        print(moviesJson)
-                        
-                        let decoder = JSONDecoder()
-                        decoder.dateDecodingStrategy = .formatted(self.dateFormatter)
-                        let data = try JSONSerialization.data(withJSONObject: moviesJson, options: .prettyPrinted)
-                        let movies = try decoder.decode([Movie].self, from: data)
-                        print(movies)
-                        onSuccess(movies)
+        let router = MoviesRouter.getMovies(parameters: parameters)
+        do {
+            let request = try router.asURLRequest()
+            let instaNetwork = InstaNetwork()
+            instaNetwork.request(
+                request: request,
+                onSuccess: { (data, response) in
+                    
+                    do{
+                        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+                        if let json = jsonResponse as? [String:Any],
+                            let moviesJson = json["results"] as? [[String:Any]] {
+                            print(moviesJson)
+                            
+                            let decoder = JSONDecoder()
+                            decoder.dateDecodingStrategy = .formatted(self.dateFormatter)
+                            let data = try JSONSerialization.data(withJSONObject: moviesJson, options: .prettyPrinted)
+                            let movies = try decoder.decode([Movie].self, from: data)
+                            print(movies)
+                            onSuccess(movies)
+                        }
+                    } catch let error {
+                        onFailure(.parsingFailed)
                     }
-                } catch let parsingError {
-                    onFailure(parsingError)
-                }
-                                
-        }) { (response, error) in
+                    
+            }) { (response, error) in
+                print(error.localizedDescription)
+                onFailure(.somethingWentWrong)
+            }
+        
+        
+        
+        } catch (let error) {
             print(error.localizedDescription)
-            onFailure(error)
         }
-        
-        
-        
     }
 }
