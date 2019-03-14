@@ -90,7 +90,6 @@ extension MoviesListPresenter: MoviesListInteractorOutputProtocol {
     func didFailToCreateNewMovie(error: Error) {
         view.showErrorMessage(error.localizedDescription)
     }
-    
 }
 
 extension MoviesListPresenter: MovieCreationDelegate {

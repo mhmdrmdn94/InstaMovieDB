@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum MoviesSectionType: Int {
     case myMovies = 0, allMovies
@@ -22,25 +23,72 @@ enum MoviesSectionType: Int {
 }
 
 class MoviesListInteractor: MoviesListInteractorProtocol {
-    
     weak var presenter: MoviesListInteractorOutputProtocol?
     
+    fileprivate var moviesService: MoviesServiceProtocol
     fileprivate var mixedMovies: [[Movie]]
     fileprivate var hasNextPage = true
     fileprivate var nextPageNumber = 1
+    fileprivate let moviesPerPage = 20
     
-    init() {
+    init(moviesService: MoviesServiceProtocol) {
+        self.moviesService = moviesService
         let myMovies = [Movie]()
         let allMovies = [Movie]()
         self.mixedMovies = [myMovies, allMovies]
     }
     
     func loadMovies() {
-        self.presenter?.didLoadMoviesSuccessfully()
+        
+        moviesService.getMovies(
+            page: nextPageNumber,
+            onSuccess: { [weak self] (movies) in
+                
+                guard let strongSelf = self else { return }
+                if movies.count < strongSelf.moviesPerPage {
+                    strongSelf.hasNextPage = false
+                } else {
+                    strongSelf.nextPageNumber = strongSelf.nextPageNumber + 1
+                }
+                
+                var mutableMixedMovies = strongSelf.mixedMovies
+                var mutableAllMovies = mutableMixedMovies[MoviesSectionType.allMovies.rawValue]
+                mutableAllMovies = movies
+                mutableMixedMovies.remove(at: MoviesSectionType.allMovies.rawValue)
+                mutableMixedMovies.insert(mutableAllMovies, at: MoviesSectionType.allMovies.rawValue)
+                strongSelf.mixedMovies = mutableMixedMovies
+                strongSelf.presenter?.didLoadMoviesSuccessfully()
+                
+        }) { [weak self] (error) in
+            guard let strongSelf = self else { return }
+            strongSelf.presenter?.didFailToLoadMovies(error: error)
+        }
     }
     
     func loadMoreMovies() {
-        self.presenter?.didLoadMoreMoviesSuccessfully()
+        moviesService.getMovies(
+            page: nextPageNumber,
+            onSuccess: { [weak self] (movies) in
+                
+                guard let strongSelf = self else { return }
+                if movies.count < strongSelf.moviesPerPage {
+                    strongSelf.hasNextPage = false
+                } else {
+                    strongSelf.nextPageNumber = strongSelf.nextPageNumber + 1
+                }
+                
+                var mutableMixedMovies = strongSelf.mixedMovies
+                var mutableAllMovies = mutableMixedMovies[MoviesSectionType.allMovies.rawValue]
+                mutableAllMovies.append(contentsOf: movies)
+                mutableMixedMovies.remove(at: MoviesSectionType.allMovies.rawValue)
+                mutableMixedMovies.insert(mutableAllMovies, at: MoviesSectionType.allMovies.rawValue)
+                strongSelf.mixedMovies = mutableMixedMovies
+                strongSelf.presenter?.didLoadMoreMoviesSuccessfully()
+                
+        }) { [weak self] (error) in
+            guard let strongSelf = self else { return }
+            strongSelf.presenter?.didFailToLoadMoreMovies(error: error)
+        }
     }
     
     func getNumberOfSections() -> Int {
@@ -104,7 +152,8 @@ fileprivate extension MoviesListInteractor {
         viewModel.title = movie.title
         viewModel.overview = movie.overview
         viewModel.releaseDate = movie.releaseDate
-        viewModel.posterImage = movie.posterImage
+        viewModel.localPosterImage = movie.posterImage
+        viewModel.posterImageUrlString = movie.fullPosterUrlString
         return viewModel
     }
 }
