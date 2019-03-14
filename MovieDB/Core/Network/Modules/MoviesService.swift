@@ -24,45 +24,46 @@ class MoviesService: NSObject, MoviesServiceProtocol {
                    onSuccess: @escaping ([Movie]) -> (),
                    onFailure: @escaping (InstaNetworkError) -> ()) {
         
-        var parameters: Parameters = ["api_key": "acea91d2bff1c53e6604e4985b6989e2"]
+        var parameters: Parameters = ["api_key": Constants.apiKay]
         if let page = page {
             parameters["page"] = page.description
         }
         
         let router = MoviesRouter.getMovies(parameters: parameters)
+        var urlRequest: URLRequest? = nil
         do {
-            let request = try router.asURLRequest()
-            let instaNetwork = InstaNetwork()
-            instaNetwork.request(
-                request: request,
-                onSuccess: { (data, response) in
-                    
-                    do{
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
-                        if let json = jsonResponse as? [String:Any],
-                            let moviesJson = json["results"] as? [[String:Any]] {
-                            print(moviesJson)
-                            
-                            let decoder = JSONDecoder()
-                            decoder.dateDecodingStrategy = .formatted(self.dateFormatter)
-                            let data = try JSONSerialization.data(withJSONObject: moviesJson, options: .prettyPrinted)
-                            let movies = try decoder.decode([Movie].self, from: data)
-                            print(movies)
-                            onSuccess(movies)
-                        }
-                    } catch let error {
-                        onFailure(.parsingFailed)
-                    }
-                    
-            }) { (response, error) in
-                print(error.localizedDescription)
+            urlRequest = try router.asURLRequest()
+        } catch let error {
+            onFailure(error as! InstaNetworkError)
+            return
+        }
+        guard let request = urlRequest else {
+            return
+        }
+        
+        InstaNetwork().request(request: request, onSuccess: { (data, response) in
+            
+            do{
+                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+                if let json = jsonResponse as? [String:Any],
+                    let moviesJson = json["results"] as? [[String:Any]] {
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .formatted(self.dateFormatter)
+                    let data = try JSONSerialization.data(withJSONObject: moviesJson, options: .prettyPrinted)
+                    let movies = try decoder.decode([Movie].self, from: data)
+                    onSuccess(movies)
+                }
+            } catch {
+                onFailure(.parsingFailed)
+            }
+            
+        }) { (response, error) in
+            let errorCode = (error as NSError).code
+            if let instaError = InstaNetworkError(rawValue: errorCode) {
+                onFailure(instaError)
+            } else {
                 onFailure(.somethingWentWrong)
             }
-        
-        
-        
-        } catch (let error) {
-            print(error.localizedDescription)
         }
     }
 }

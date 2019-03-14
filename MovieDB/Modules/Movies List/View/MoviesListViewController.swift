@@ -23,7 +23,7 @@ class MoviesListViewController: BaseViewController {
     }
     
     private func setupView() {
-        navigationItem.title = "MoviesDB"
+        navigationItem.title = "InstaMovies"
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.backgroundColor = InstaMovieColor.secondry.value
     }

@@ -11,7 +11,8 @@ import UIKit
 class MoviesListBuilder: MoviesListBuilderProtocol {
     func buildMoviesListModule() -> UIViewController {
         let viewController = MoviesListViewController()
-        let interactor = MoviesListInteractor()
+        let moviesService = MoviesService()
+        let interactor = MoviesListInteractor(moviesService: moviesService)
         let wireframe = MoviesListWireframe()
         let presenter = MoviesListPresenter(view: viewController,
                                             interactor: interactor,

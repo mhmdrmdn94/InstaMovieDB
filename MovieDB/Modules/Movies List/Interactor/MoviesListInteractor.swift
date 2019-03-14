@@ -23,22 +23,23 @@ enum MoviesSectionType: Int {
 }
 
 class MoviesListInteractor: MoviesListInteractorProtocol {
-    
     weak var presenter: MoviesListInteractorOutputProtocol?
     
+    fileprivate var moviesService: MoviesServiceProtocol
     fileprivate var mixedMovies: [[Movie]]
     fileprivate var hasNextPage = true
     fileprivate var nextPageNumber = 1
     fileprivate let moviesPerPage = 20
     
-    init() {
+    init(moviesService: MoviesServiceProtocol) {
+        self.moviesService = moviesService
         let myMovies = [Movie]()
         let allMovies = [Movie]()
         self.mixedMovies = [myMovies, allMovies]
     }
     
     func loadMovies() {
-        let moviesService = MoviesService()
+        
         moviesService.getMovies(
             page: nextPageNumber,
             onSuccess: { [weak self] (movies) in
@@ -65,7 +66,6 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
     }
     
     func loadMoreMovies() {
-        let moviesService = MoviesService()
         moviesService.getMovies(
             page: nextPageNumber,
             onSuccess: { [weak self] (movies) in
