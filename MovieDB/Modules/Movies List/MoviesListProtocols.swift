@@ -15,7 +15,7 @@ protocol MoviesListViewProtocol: class {
     func hideLoaderState()
     func showFooterLoaderView()
     func hideFooterLoaderView()
-    func showEmptyState()
+    func showEmptyState(withType type: InstaEmptyStateType)
     func hideEmptyState()
     func showErrorMessage(_ message: String)
 }
@@ -34,6 +34,7 @@ protocol MoviesListPresenterProtocol: class {
 protocol MoviesListInteractorProtocol: class {
     func loadMovies()
     func loadMoreMovies()
+    func getIsDataSourceEmpty() -> Bool
     func getNumberOfSections() -> Int
     func getNumberOfRows(atSection section: Int) -> Int
     func getMovieViewModelAt(_ indexPath: IndexPath) -> MovieViewModel?
@@ -44,11 +45,11 @@ protocol MoviesListInteractorProtocol: class {
 
 protocol MoviesListInteractorOutputProtocol: class {
     func didLoadMoviesSuccessfully()
-    func didFailToLoadMovies(error: Error)
+    func didFailToLoadMovies(error: InstaNetworkError)
     func didLoadMoreMoviesSuccessfully()
-    func didFailToLoadMoreMovies(error: Error)
+    func didFailToLoadMoreMovies(error: InstaNetworkError)
     func didCreateNewMovie()
-    func didFailToCreateNewMovie(error: Error)
+    func didFailToCreateNewMovie(error: InstaNetworkError)
 }
 
 protocol MoviesListWireframeProtocol: class {

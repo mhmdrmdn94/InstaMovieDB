@@ -38,6 +38,16 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
         self.mixedMovies = [myMovies, allMovies]
     }
     
+    func getIsDataSourceEmpty() -> Bool {
+        let myMovies = mixedMovies[MoviesSectionType.myMovies.rawValue]
+        let allMovies = mixedMovies[MoviesSectionType.allMovies.rawValue]
+        if myMovies.isEmpty && allMovies.isEmpty {
+            return true
+        }
+        return false
+    }
+    
+    
     func loadMovies() {
         
         moviesService.getMovies(

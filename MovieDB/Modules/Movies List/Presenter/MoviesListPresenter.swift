@@ -62,14 +62,23 @@ class MoviesListPresenter: MoviesListPresenterProtocol {
 
 extension MoviesListPresenter: MoviesListInteractorOutputProtocol {
     func didLoadMoviesSuccessfully() {
-        //TODO: check if datasource is empty, then show empty state
         view.hideLoaderState()
         view.reloadData()
+        if interactor.getIsDataSourceEmpty() {
+            view.showEmptyState(withType: .noResultsFound)
+        }
     }
     
-    func didFailToLoadMovies(error: Error) {
+    func didFailToLoadMovies(error: InstaNetworkError) {
         view.hideLoaderState()
-        view.showErrorMessage(error.localizedDescription)
+        var type = InstaEmptyStateType.somethingWentWrong
+        switch error {
+        case .noInternetConnection:
+            type = .noInternetConnection
+        default:
+            type = .somethingWentWrong
+        }
+        view.showEmptyState(withType: type)
     }
     
     func didLoadMoreMoviesSuccessfully() {
@@ -77,7 +86,7 @@ extension MoviesListPresenter: MoviesListInteractorOutputProtocol {
         view.reloadData()
     }
     
-    func didFailToLoadMoreMovies(error: Error) {
+    func didFailToLoadMoreMovies(error: InstaNetworkError) {
         view.hideFooterLoaderView()
         view.showErrorMessage(error.localizedDescription)
     }
@@ -87,7 +96,7 @@ extension MoviesListPresenter: MoviesListInteractorOutputProtocol {
         view.reloadData()
     }
     
-    func didFailToCreateNewMovie(error: Error) {
+    func didFailToCreateNewMovie(error: InstaNetworkError) {
         view.showErrorMessage(error.localizedDescription)
     }
 }
