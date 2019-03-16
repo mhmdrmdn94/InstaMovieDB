@@ -55,6 +55,13 @@ extension InstaURLRequestConvertible {
         if let params = parameters {
             urlRequest = try parametersEncoding.encode(request: urlRequest, parameters: params)
         }
+        
+        if let headers = headers {
+            headers.forEach { (key, value) in
+                urlRequest.addValue(value, forHTTPHeaderField: key)
+            }
+        }
+        
         return urlRequest
     }
 }

@@ -18,8 +18,8 @@ public enum ParametersEncoding {
             return request
             
         case .body:
-            //TODO: to be implemented later
-            throw InstaNetworkError.somethingWentWrong
+            let request = try self.encodeJsonBodyParams(request: request, parameters: parameters)
+            return request
         }
     }
     
@@ -41,4 +41,15 @@ public enum ParametersEncoding {
         mutableRequest.url = urlComponents?.url
         return mutableRequest
     }
+    
+    private func encodeJsonBodyParams(request: URLRequest, parameters: Parameters) throws -> URLRequest {
+        var mutableRequest = request
+        do {
+            mutableRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .init(rawValue: 0))
+        } catch {
+            throw InstaNetworkError.parsingFailed
+        }
+        return mutableRequest
+    }
+    
 }
