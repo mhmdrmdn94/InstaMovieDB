@@ -53,6 +53,8 @@ class MovieTableViewCell: UITableViewCell {
             avatarImageView.image = localImage
         } else if let imageUrl = URL(string: viewModel.posterImageUrlString ?? "") {
             avatarImageView.setImage(withUrl: imageUrl)
+        } else {
+            avatarImageView.image = #imageLiteral(resourceName: "default-poster")
         }
     }
     

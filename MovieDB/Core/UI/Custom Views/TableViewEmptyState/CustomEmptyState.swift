@@ -8,6 +8,29 @@
 
 import UIKit
 
+enum InstaEmptyStateType {
+    case noResultsFound
+    case noInternetConnection
+    case somethingWentWrong
+    
+    var title: String {
+        switch self {
+        case .noResultsFound:
+            return "No movies found!"
+        case .noInternetConnection:
+            return "Internet connection seems to be offline!"
+        case .somethingWentWrong:
+            return "Ops! Something went wrong!"
+        }
+    }
+    
+    var avatar: UIImage {
+        //TODO: get more realistic icons for a better ui appearance
+        return #imageLiteral(resourceName: "noresults")
+    }
+}
+
+
 class CustomEmptyState: UIView {
 
     @IBOutlet fileprivate var contentView: UIView!
@@ -28,6 +51,11 @@ class CustomEmptyState: UIView {
         contentView = loadFromNib(named: CustomEmptyState.nibName)!
         addSubview(contentView)
         pinItemToEdges(item: contentView)
+    }
+    
+    func configure(type: InstaEmptyStateType) {
+        titleLabel.text = type.title
+        avatarImageView.image = type.avatar
     }
     
 }

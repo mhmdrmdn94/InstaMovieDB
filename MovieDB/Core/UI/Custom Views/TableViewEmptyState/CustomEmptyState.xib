@@ -28,18 +28,18 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gdU-IA-BUV">
                             <rect key="frame" x="89.5" y="221.5" width="192.5" height="200.5"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vNY-bm-fGr">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noresults" translatesAutoresizingMaskIntoConstraints="NO" id="vNY-bm-fGr">
                                     <rect key="frame" x="16" y="0.0" width="160" height="160"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="160" id="BqP-Xr-nkY"/>
-                                        <constraint firstAttribute="width" constant="160" id="Ww4-Q0-1XE"/>
+                                        <constraint firstAttribute="width" constant="160" id="5Wt-oM-xD9"/>
+                                        <constraint firstAttribute="height" constant="160" id="s3s-hT-xyI"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry! No movies found." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQE-Aa-JYM">
                                     <rect key="frame" x="0.0" y="180" width="192.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
+                                    <color key="highlightedColor" red="0.054901960784313725" green="0.18431372549019609" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                             </subviews>
                         </stackView>
@@ -61,4 +61,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>
+    <resources>
+        <image name="noresults" width="256" height="256"/>
+    </resources>
 </document>

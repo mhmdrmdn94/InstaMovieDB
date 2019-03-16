@@ -136,9 +136,10 @@ extension MoviesListViewController: MoviesListViewProtocol {
         }
     }
     
-    func showEmptyState() {
+    func showEmptyState(withType type: InstaEmptyStateType) {
         DispatchQueue.main.async { [weak self] in
             let emptyView = CustomEmptyState()
+            emptyView.configure(type: type)
             self?.tableView.backgroundView = emptyView
         }
     }
