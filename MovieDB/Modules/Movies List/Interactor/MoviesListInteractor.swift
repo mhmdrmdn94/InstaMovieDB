@@ -38,6 +38,10 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
         self.mixedMovies = [myMovies, allMovies]
     }
     
+    func getMixedMoviesDataSource() -> [[Movie]] {
+        return mixedMovies
+    }
+    
     func getIsDataSourceEmpty() -> Bool {
         let myMovies = mixedMovies[MoviesSectionType.myMovies.rawValue]
         let allMovies = mixedMovies[MoviesSectionType.allMovies.rawValue]
@@ -111,6 +115,20 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
         return movies.count
     }
     
+    func getMovieModelAt(_ indexPath: IndexPath) -> Movie? {
+        guard let sectionType = MoviesSectionType(rawValue: indexPath.section),
+            mixedMovies.count > sectionType.rawValue else {
+                return nil
+        }
+        
+        let movies = mixedMovies[sectionType.rawValue]
+        if indexPath.row < movies.count {
+            let movie = movies[indexPath.row]
+            return movie
+        }
+        return nil
+    }
+    
     func getMovieViewModelAt(_ indexPath: IndexPath) -> MovieViewModel? {
         guard let sectionType = MoviesSectionType(rawValue: indexPath.section),
             mixedMovies.count > sectionType.rawValue else {
@@ -126,18 +144,14 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
         return nil
     }
     
-    func getMovieModelAt(_ indexPath: IndexPath) -> Movie? {
-        guard let sectionType = MoviesSectionType(rawValue: indexPath.section),
-            mixedMovies.count > sectionType.rawValue else {
-                return nil
-        }
-        
-        let movies = mixedMovies[sectionType.rawValue]
-        if indexPath.row < movies.count {
-            let movie = movies[indexPath.row]
-            return movie
-        }
-        return nil
+    func getMovieViewModel(fromMovie movie: Movie) -> MovieViewModel {
+        var viewModel = MovieViewModel()
+        viewModel.title = movie.title
+        viewModel.overview = movie.overview
+        viewModel.releaseDate = movie.releaseDate
+        viewModel.localPosterImage = movie.posterImage
+        viewModel.posterImageUrlString = movie.fullPosterUrlString
+        return viewModel
     }
     
     func getHasMorePages() -> Bool {
@@ -154,16 +168,4 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
         self.presenter?.didCreateNewMovie()
     }
     
-}
-
-fileprivate extension MoviesListInteractor {
-    func getMovieViewModel(fromMovie movie: Movie) -> MovieViewModel {
-        var viewModel = MovieViewModel()
-        viewModel.title = movie.title
-        viewModel.overview = movie.overview
-        viewModel.releaseDate = movie.releaseDate
-        viewModel.localPosterImage = movie.posterImage
-        viewModel.posterImageUrlString = movie.fullPosterUrlString
-        return viewModel
-    }
 }
