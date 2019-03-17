@@ -20,10 +20,10 @@ enum InstaMovieColor {
     var value: UIColor {
         switch self {
         case .primary:
-            return UIColor(hexString: "#0E2F44")    //dark-blue
+            return UIColor(hexString: "#081c24")    //blue
             
         case .secondry:
-            return UIColor(hexString: "#C0D6E4")    //light-blue
+            return UIColor(hexString: "#01d277")    //green
            
         case .custom(let hexString, let alpha):
             return UIColor(hexString: hexString).withAlphaComponent(CGFloat(alpha))

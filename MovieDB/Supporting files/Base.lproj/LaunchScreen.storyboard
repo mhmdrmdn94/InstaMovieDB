@@ -18,17 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to InstaMoviesDB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRt-gP-ijv">
-                                <rect key="frame" x="59" y="321.5" width="257" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="njz-Tt-mVY">
+                                <rect key="frame" x="122.5" y="593" width="130" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sTe-xa-tLt"/>
+                                    <constraint firstAttribute="width" constant="130" id="wBQ-8h-EgW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jRt-gP-ijv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0p2-tk-t3W"/>
-                            <constraint firstItem="jRt-gP-ijv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="8P4-Xb-ddL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="njz-Tt-mVY" secondAttribute="bottom" constant="24" id="IBJ-J6-BtQ"/>
+                            <constraint firstItem="njz-Tt-mVY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MKm-pV-STh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +39,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="big-logo-blue" width="408" height="161"/>
+    </resources>
 </document>

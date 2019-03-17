@@ -19,6 +19,7 @@ class HomeViewController: BaseViewController {
     
     func setupView() {
         homeButton.backgroundColor = InstaMovieColor.primary.value
+        homeButton.setTitleColor(InstaMovieColor.secondry.value, for: .normal)
         homeButton.roundCorners(withRadius: 5)
     }
     

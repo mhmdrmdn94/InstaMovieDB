@@ -41,8 +41,6 @@ class MovieCreationViewController: BaseViewController {
     func setupView() {
         navigationItem.title = "Create Movie"
         overviewTextView.roundCorners(withRadius: 5, borderWidth: 0.5, borderColor: .lightGray)
-        createButton.backgroundColor = InstaMovieColor.primary.value
-        createButton.roundCorners(withRadius: 5)
     }
     
     @IBAction func pickPosterButtonTapped(_ sender: UIButton) {
@@ -50,20 +48,34 @@ class MovieCreationViewController: BaseViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
+        let (isValid, message) = validateFields()
+        if !isValid {
+            Alert.show(message: message ?? "Something went wrong!")
+            return
+        }
+        
         let newMovie = self.createMovie()
         delegate?.didCreateNewMovie(newMovie)
         navigationController?.popViewController(animated: true)
     }
     
-    func createMovie() -> Movie {
+    private func createMovie() -> Movie {
         let movieId = 1     //constant because movieId it is useless
-        let title = titleTextField.text
+        let title = titleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let overview = overviewTextView.text
         let posterImage = selectedImage
         let releaseDate = selectedDate
         let  movie = Movie(movieId: movieId, title: title, overview: overview, posterPath: nil, posterImage: posterImage, releaseDate: releaseDate)
         return movie
-        
+    }
+    
+    private func validateFields() -> (isValid: Bool, message: String?) {
+        var title = titleTextField.text ?? ""
+        title = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        if title.isEmpty {
+            return (false, "Title field is mandatory!")
+        }
+        return (true, nil)
     }
 }
 
@@ -155,6 +167,6 @@ extension MovieCreationViewController: UIImagePickerControllerDelegate, UINaviga
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("Picker cancelled ..")
+        picker.dismiss(animated: true, completion: nil)
     }
 }
