@@ -94,7 +94,7 @@ class MoviesListInteractorTests: XCTestCase {
     }
 }
 
-internal class MockMoviesService: MoviesServiceProtocol {
+fileprivate class MockMoviesService: MoviesServiceProtocol {
     func getMovies(page: Int?, onSuccess: @escaping ([Movie]) -> (),
                    onFailure: @escaping (InstaNetworkError) -> ()) {
         

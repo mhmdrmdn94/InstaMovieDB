@@ -34,7 +34,6 @@ protocol MoviesListPresenterProtocol: class {
 protocol MoviesListInteractorProtocol: class {
     func loadMovies()
     func loadMoreMovies()
-    func getMixedMoviesDataSource() -> [[Movie]]
     func getIsDataSourceEmpty() -> Bool
     func getNumberOfSections() -> Int
     func getNumberOfRows(atSection section: Int) -> Int

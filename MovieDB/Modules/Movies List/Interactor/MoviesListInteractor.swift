@@ -38,10 +38,6 @@ class MoviesListInteractor: MoviesListInteractorProtocol {
         self.mixedMovies = [myMovies, allMovies]
     }
     
-    func getMixedMoviesDataSource() -> [[Movie]] {
-        return mixedMovies
-    }
-    
     func getIsDataSourceEmpty() -> Bool {
         let myMovies = mixedMovies[MoviesSectionType.myMovies.rawValue]
         let allMovies = mixedMovies[MoviesSectionType.allMovies.rawValue]
