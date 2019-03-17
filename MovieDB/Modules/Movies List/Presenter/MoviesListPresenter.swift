@@ -103,7 +103,6 @@ extension MoviesListPresenter: MoviesListInteractorOutputProtocol {
 
 extension MoviesListPresenter: MovieCreationDelegate {
     func didCreateNewMovie(_ movie: Movie) {
-        print("Hola! a new movie has been created.   \( movie )")
         view.showLoaderState()
         interactor.addNewCreatedMovie(movie)
     }

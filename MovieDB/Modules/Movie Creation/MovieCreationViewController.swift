@@ -56,7 +56,7 @@ class MovieCreationViewController: BaseViewController {
     }
     
     func createMovie() -> Movie {
-        let movieId = 1     //constant as it is useless here!
+        let movieId = 1     //constant because movieId it is useless
         let title = titleTextField.text
         let overview = overviewTextView.text
         let posterImage = selectedImage

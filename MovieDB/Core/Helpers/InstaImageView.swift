@@ -13,7 +13,6 @@ class InstaImageView: UIImageView {
     private var imageUrlString: String?
     
     func setImage(withUrl url: URL) {
-        
         self.imageUrlString = url.absoluteString
         
         let cachedImage = InstaImageCache.shared.getImageFromCache(urlString: url.absoluteString)

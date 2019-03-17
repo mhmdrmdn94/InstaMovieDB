@@ -38,6 +38,7 @@ protocol MoviesListInteractorProtocol: class {
     func getNumberOfSections() -> Int
     func getNumberOfRows(atSection section: Int) -> Int
     func getMovieViewModelAt(_ indexPath: IndexPath) -> MovieViewModel?
+    func getMovieViewModel(fromMovie movie: Movie) -> MovieViewModel
     func getMovieModelAt(_ indexPath: IndexPath) -> Movie?
     func getHasMorePages() -> Bool
     func addNewCreatedMovie(_ movie: Movie)

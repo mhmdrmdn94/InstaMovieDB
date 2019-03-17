@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Movie: Codable {
+public class Movie: Codable, Equatable {
     var movieId: Int
     var title: String?
     var overview: String?
@@ -38,6 +38,19 @@ public class Movie: Codable {
         case movieId = "id"
         case posterPath = "poster_path"
         case releaseDate = "release_date"
+    }
+    
+    public static func == (lhs: Movie, rhs: Movie) -> Bool {
+        let equalIds = (lhs.movieId == rhs.movieId)
+        let equalTitles = (lhs.title == rhs.title)
+        let equalOverviews = (lhs.overview == rhs.overview)
+        let equalReleaseDates = (lhs.releaseDate == rhs.releaseDate)
+        let equalPosterPath = (lhs.posterPath == rhs.posterPath)
+        let equalPosterImage = (lhs.posterImage == rhs.posterImage)
+        let equalFullUrl = (lhs.fullPosterUrlString == rhs.fullPosterUrlString)
+        
+        let areEqual = (equalIds && equalTitles && equalOverviews && equalReleaseDates && equalPosterPath && equalReleaseDates && equalPosterImage && equalFullUrl)
+        return areEqual
     }
     
 }

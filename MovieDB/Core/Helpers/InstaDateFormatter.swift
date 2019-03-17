@@ -18,22 +18,15 @@ class InstaDateFormatter {
     private init() {
         formatter = DateFormatter()
         formatter.timeZone = TimeZone(abbreviation: "GMT")
+        formatter.locale = Locale(identifier:  "en")
     }
     
-    func getString(date: Date, format: String, timeZone: TimeZone? = nil) -> String {
-        if let timeZone = timeZone {
-            formatter.timeZone = timeZone
-        }
-        formatter.locale = Locale(identifier:  "en")
+    func getString(date: Date, format: String) -> String {
         formatter.dateFormat = format
         return formatter.string(from: date)
     }
     
-    func getDate(string: String, format: String, timeZone: TimeZone? = nil) -> Date? {
-        if let timeZone = timeZone {
-            formatter.timeZone = timeZone
-        }
-        formatter.locale = Locale(identifier:  "en")
+    func getDate(string: String, format: String) -> Date? {
         formatter.dateFormat = format
         return formatter.date(from: string)
     }

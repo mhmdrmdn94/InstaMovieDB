@@ -11,6 +11,7 @@ import UIKit
 protocol ImageCacheProtocol {
     func addImageToCache(image: UIImage, urlString: String)
     func getImageFromCache(urlString: String) -> UIImage?
+    func getWholeCache() -> NSCache<AnyObject, AnyObject>
 }
 
 class InstaImageCache: NSObject, ImageCacheProtocol {
@@ -18,6 +19,9 @@ class InstaImageCache: NSObject, ImageCacheProtocol {
     private let imageCache = NSCache<AnyObject, AnyObject>()
     private override init() { }
     
+    func getWholeCache() -> NSCache<AnyObject, AnyObject> {
+        return imageCache
+    }
     
     func addImageToCache(image: UIImage, urlString: String) {
         imageCache.setObject(image, forKey: urlString as AnyObject)
