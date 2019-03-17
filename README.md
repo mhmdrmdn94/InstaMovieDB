@@ -16,6 +16,7 @@ I will try to keep updating this repository, I will try to enhance performance f
 * InstaImageView, which is a replace for `SDWebImage`
 * InstaImageCache, which is a replace for `SDWebImage caching` technique 
 * My own InfiniteScrolling, which is a replace for `UIScrollView-InfiniteScroll`
+* Used `URLSession` to implement my network layer instead of `Alamofire`
 * Applied `UnitTesting` for some module, I will always try to enhance the code coverage.
 * Applied `VIPER` on movies list module.
 * Applied `InstaEmptyState` for handling ErrorStates & EmptyStates
