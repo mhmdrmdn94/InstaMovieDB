@@ -2,7 +2,9 @@
 Zero CocoaPods while building the MovieDB app sample
 
 
-In this sample project I tried to use the [TheMovieDB](https://www.themoviedb.org)  api's to build a *Zero Exteernal Libraries* iOS project.
+
+
+In this sample project I tried to use the [TheMovieDB](https://www.themoviedb.org)  api's to build a *Zero External Libraries* iOS project.
 
 This helped me to create libs like Alamofire & SDWebImage and many more. I have built my full network layer based on _URLSession_ and built my own _InstaImageView_ class which simulates SDWebImage's stuff for downloading remote images.
    
