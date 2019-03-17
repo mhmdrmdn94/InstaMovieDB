@@ -12,9 +12,9 @@ import XCTest
 class MoviesListPresenterTests: XCTestCase {
 
     var presenter: MoviesListPresenter!
-    var view: MockMoviesView!
-    var interactor: MockMoviesInteractor!
-    var wireframe: MockMoviesWireframe!
+    fileprivate var view: MockMoviesView!
+    fileprivate var interactor: MockMoviesInteractor!
+    fileprivate var wireframe: MockMoviesWireframe!
     
     override func setUp() {
         super.setUp()
@@ -128,7 +128,7 @@ class MoviesListPresenterTests: XCTestCase {
 }
 
 
-internal class MockMoviesView: MoviesListViewProtocol {
+fileprivate class MockMoviesView: MoviesListViewProtocol {
     
     var didReloadData = false
     var didReloadCellAtIndex = false
@@ -177,7 +177,7 @@ internal class MockMoviesView: MoviesListViewProtocol {
     }
 }
 
-internal class MockMoviesWireframe: MoviesListWireframeProtocol {
+fileprivate class MockMoviesWireframe: MoviesListWireframeProtocol {
     var didOpenCreateMovieModule = false
     
     func openCreateNewMovieModule(view: MoviesListViewProtocol, delegate: MovieCreationDelegate) {
@@ -185,7 +185,7 @@ internal class MockMoviesWireframe: MoviesListWireframeProtocol {
     }
 }
 
-internal class MockMoviesInteractor: MoviesListInteractorProtocol {
+fileprivate class MockMoviesInteractor: MoviesListInteractorProtocol {
     var didLoadMovies = false
     var didLoadMoreMovies = false
     var didGetIsDataSourceEmpty = false

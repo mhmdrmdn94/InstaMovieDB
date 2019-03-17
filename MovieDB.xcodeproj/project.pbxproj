@@ -146,10 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				461EAAB8223CF50B00CB31FF /* Info.plist */,
-				461EAAC2223CF99D00CB31FF /* InstaImageCacheTests.swift */,
-				461EAAC4223CFEC900CB31FF /* MoviesListInteractorTests.swift */,
 				461EAAC6223D11FC00CB31FF /* InstaURLRequestConvertibleTests.swift */,
+				461EAAC2223CF99D00CB31FF /* InstaImageCacheTests.swift */,
 				460AFF20223E1EE9001F6227 /* MovieModelTests.swift */,
+				461EAAC4223CFEC900CB31FF /* MoviesListInteractorTests.swift */,
 				460AFF22223E2054001F6227 /* MoviesListPresenterTests.swift */,
 			);
 			path = MovieDBTests;
