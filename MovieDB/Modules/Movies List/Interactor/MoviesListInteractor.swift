@@ -6,7 +6,6 @@
 //  Copyright © 2019 Mo-Ramadan Abdelhafez. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 enum MoviesSectionType: Int {

@@ -14,14 +14,6 @@ class InstaImageCacheTests: XCTestCase {
     let originalImageValue = #imageLiteral(resourceName: "noresults")
     let originalImageKey = "sad-emoji"
     
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
     func testSingleton() {
         let firstCacheObject = InstaImageCache.shared
         let secondCacheObject = InstaImageCache.shared

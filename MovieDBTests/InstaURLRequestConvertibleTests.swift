@@ -10,19 +10,8 @@ import XCTest
 @testable import MovieDB
 
 class InstaURLRequestConvertibleTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
     
     func testURLRequestBuilder() {
-        
-        
         let params: Parameters = ["instaKey": "instaValue",
                                   "api_key": "acea91d2bff1c53e6604e4985b6989e2" ]
         let router = MoviesRouter.getMovies(parameters: params)

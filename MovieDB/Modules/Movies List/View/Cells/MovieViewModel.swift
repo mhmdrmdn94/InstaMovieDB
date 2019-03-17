@@ -13,18 +13,18 @@ struct MovieViewModel: Equatable {
     var overview: String?
     var releaseDate: Date?
     var posterImageUrlString: String?
-    var localPosterImage: UIImage?   //for thos movies which created locally
+    var localPosterImage: UIImage?
     
     var dateString: String {
         if let date = releaseDate {
             let dateString = InstaDateFormatter.shared.getString(date: date, format: "MMMM yyyy")
             return dateString
         } else {
-            return "release date N/A"
+            return "ReleaseDate N/A"
         }
     }
     
-    //MARK: I have added this just to make UnitTesting much easier
+    //MARK: used in UnitTesting module
     static func == (lhs: MovieViewModel, rhs: MovieViewModel) -> Bool {
         let equalTitles = (lhs.title == rhs.title)
         let equalOverviews = (lhs.overview == rhs.overview)
