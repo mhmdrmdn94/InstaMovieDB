@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 fileprivate extension AppDelegate {
     private func initWindow() {
-        let homeViewController = HomeViewController()
+        let homeViewController = UINavigationController(rootViewController: HomeViewController())
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = homeViewController
         window?.makeKeyAndVisible()

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomEmptyState" customModule="MovieDB" customModuleProvider="target">
+            <connections>
+                <outlet property="avatarImageView" destination="vNY-bm-fGr" id="1Z7-HU-rvS"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="STp-eu-xJU"/>
+                <outlet property="titleLabel" destination="tQE-Aa-JYM" id="Cx9-Ys-4Nf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yU7-kK-lii">
+                    <rect key="frame" x="2" y="22" width="371" height="643"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gdU-IA-BUV">
+                            <rect key="frame" x="89.5" y="221.5" width="192.5" height="200.5"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noresults" translatesAutoresizingMaskIntoConstraints="NO" id="vNY-bm-fGr">
+                                    <rect key="frame" x="16" y="0.0" width="160" height="160"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="160" id="5Wt-oM-xD9"/>
+                                        <constraint firstAttribute="height" constant="160" id="s3s-hT-xyI"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry! No movies found." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQE-Aa-JYM">
+                                    <rect key="frame" x="0.0" y="180" width="192.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <color key="highlightedColor" red="0.054901960784313725" green="0.18431372549019609" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gdU-IA-BUV" firstAttribute="centerY" secondItem="yU7-kK-lii" secondAttribute="centerY" id="FWK-vX-FXy"/>
+                        <constraint firstItem="gdU-IA-BUV" firstAttribute="centerX" secondItem="yU7-kK-lii" secondAttribute="centerX" id="bD2-uG-WRA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="yU7-kK-lii" secondAttribute="bottom" constant="2" id="EHC-x9-VX3"/>
+                <constraint firstItem="yU7-kK-lii" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="2" id="GvN-TD-N5y"/>
+                <constraint firstItem="yU7-kK-lii" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="2" id="bVp-J8-NQQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yU7-kK-lii" secondAttribute="trailing" constant="2" id="q1A-cG-lTP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="noresults" width="256" height="256"/>
+    </resources>
+</document>

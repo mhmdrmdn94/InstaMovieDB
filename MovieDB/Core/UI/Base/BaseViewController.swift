@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  BaseViewController.swift
 //  MovieDB
 //
 //  Created by Mo-Ramadan Abdelhafez on 3/10/19.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class BaseViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
