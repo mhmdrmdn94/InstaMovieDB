@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		460AFF21223E1EE9001F6227 /* MovieModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460AFF20223E1EE9001F6227 /* MovieModelTests.swift */; };
 		460AFF23223E2054001F6227 /* MoviesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460AFF22223E2054001F6227 /* MoviesListPresenterTests.swift */; };
+		4617AF81223EBB07002E1042 /* InstaFooterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4617AF80223EBB07002E1042 /* InstaFooterButton.swift */; };
 		461EAA8D223AEAF500CB31FF /* InstaNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461EAA8C223AEAF500CB31FF /* InstaNetworkError.swift */; };
 		461EAA8F223AEB7300CB31FF /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461EAA8E223AEB7300CB31FF /* String+URL.swift */; };
 		461EAA91223AF15300CB31FF /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461EAA90223AF15300CB31FF /* ParameterEncoding.swift */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		460AFF20223E1EE9001F6227 /* MovieModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModelTests.swift; sourceTree = "<group>"; };
 		460AFF22223E2054001F6227 /* MoviesListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListPresenterTests.swift; sourceTree = "<group>"; };
+		4617AF80223EBB07002E1042 /* InstaFooterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaFooterButton.swift; sourceTree = "<group>"; };
 		461EAA8C223AEAF500CB31FF /* InstaNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaNetworkError.swift; sourceTree = "<group>"; };
 		461EAA8E223AEB7300CB31FF /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		461EAA90223AF15300CB31FF /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				464A834B2235B36C00A5C704 /* Custom Views */,
 				464A83462235B30300A5C704 /* Base */,
+				4617AF80223EBB07002E1042 /* InstaFooterButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				464A831F22354CC000A5C704 /* AppDelegate.swift in Sources */,
 				46D960EC22383D18003F31D4 /* MoviesRouter.swift in Sources */,
 				464A83572235B57B00A5C704 /* APIConstants.swift in Sources */,
+				4617AF81223EBB07002E1042 /* InstaFooterButton.swift in Sources */,
 				464A83642235BFBA00A5C704 /* MoviesListPresenter.swift in Sources */,
 				464A83602235BFA600A5C704 /* MoviesListBuilder.swift in Sources */,
 				464A833322354D2400A5C704 /* HomeViewController.swift in Sources */,
